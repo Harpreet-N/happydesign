@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import { useScrollAnimation, useStaggeredAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
+import {ImageWithFallback} from "./figma/ImageWithFallback.tsx";
 
 interface BentoGridProps {
   onProjectClick: (slug: string) => void;
@@ -165,12 +166,12 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
                     <div
                       className={`w-full ${isLarge ? "h-80" : "h-64"} bg-marble marble-texture`}
                     >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
 
+                        <ImageWithFallback
+                            src={project.cover}
+                            alt={project.title}
+                            className="w-[80vw] h-[41vh] group-hover:scale-105 transition-transform duration-500"
+                        />
                       <div className="absolute top-0 right-0 w-16 h-4 bg-stone border-l-2 border-b-2 border-black hover-rotate transition-transform duration-300" />
                       {isLarge && (
                         <div className="absolute bottom-0 left-0 w-24 h-4 bg-yellow-dark border-r-2 border-t-2 border-black hover-rotate transition-transform duration-300" />
@@ -189,7 +190,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
                     </h3>
 
                     <p className="font-inter text-stone-dark text-sm leading-relaxed mb-4">
-                      {project.description}
+                      {project.overviewShort}
                     </p>
 
                     <div className="flex flex-wrap gap-2">

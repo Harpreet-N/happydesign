@@ -40,7 +40,7 @@ export function ModernBentoPattern() {
           </svg>
         ),
         title: 'Portfolio',
-        subtitle: '2024'
+        subtitle: '2025'
       }
     },
     {

@@ -52,7 +52,7 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
         <div className="container mx-auto px-8 md:px-16 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white font-inter text-sm">
-              © 2024 Harpreet Singh Nehar. All rights reserved.
+              © 2025 Harpreet Singh Nehar. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-6">

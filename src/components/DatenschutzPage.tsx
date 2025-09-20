@@ -195,7 +195,7 @@ export function DatenschutzPage({ onBack }: DatenschutzPageProps) {
               
               <p className="bg-yellow border-2 border-black p-4 mt-6 hover-scale transition-transform duration-300">
                 To exercise any of these rights, please contact us at: 
-                <strong> hello@harpreet.design</strong>
+                <strong> harpreetneharyt@gmail.com</strong>
               </p>
             </div>
           </div>
@@ -209,11 +209,11 @@ export function DatenschutzPage({ onBack }: DatenschutzPageProps) {
             <div className="space-y-4 font-inter text-stone">
               <p>
                 If you have any questions about this privacy policy or our data practices, 
-                please contact us at <strong className="text-white">hello@harpreet.design</strong>
+                please contact us at <strong className="text-white">harpreetneharyt@gmail.com</strong>
               </p>
               
               <p>
-                This privacy policy was last updated on <strong className="text-white">December 2024</strong>. 
+                This privacy policy was last updated on <strong className="text-white">December 2025</strong>.
                 We may update this policy from time to time. Any changes will be posted on this page.
               </p>
             </div>

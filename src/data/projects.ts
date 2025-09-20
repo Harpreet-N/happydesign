@@ -8,6 +8,7 @@ export interface Project {
   category: string;
   year: string;
   overview: string;
+  overviewShort?: string;
   problem: string;
   process: string;
   solution: string;
@@ -15,58 +16,68 @@ export interface Project {
   gallery: string[];
 }
 
+
+
 export const projects: Project[] = [
   {
     id: "1",
     title: "Agility Plus",
     slug: "agility-plus",
-    tags: ["Mobile App", "UX/UI", "Productivity"],
-    cover:
-      "https://images.unsplash.com/photo-1750056393326-8feed2a1c34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzbWFydHBob25lJTIwbW9ja3VwJTIwcHJvZHVjdHxlbnwxfHx8fDE3NTgyMzAxNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    summary:
-      "A comprehensive fitness tracking app designed to help users reach their wellness goals through personalized workout plans and nutrition guidance.",
-    category: "Mobile Application",
-    year: "2024",
-    overview:
-      "Agility Plus reimagines fitness tracking by combining AI-powered workout recommendations with intuitive nutrition tracking. The app focuses on creating sustainable habits rather than quick fixes.",
-    problem:
-      "Existing fitness apps often overwhelm users with too many features or provide generic workout plans that don't adapt to individual progress and preferences.",
-    process:
-      "We conducted extensive user research with 150+ fitness enthusiasts, created detailed user personas, and iteratively tested prototypes through multiple design sprints.",
-    solution:
-      "A streamlined interface that learns from user behavior to suggest optimal workout times, exercises, and nutrition goals. The app features adaptive difficulty scaling and community challenges.",
-    results:
-      "Launch resulted in 50K+ downloads in the first month, 4.8 App Store rating, and 73% user retention after 30 days.",
+    tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
+    cover: "../../src/assets/project/agility/logo.svg",
+    summary: "Agility Plus is a modular, digital training system that combines physical agility with cognitive challenges through LED-guided exercises and an app-based platform.",
+    category: "UX/UI & Product Design",
+    year: "2025",
+    overview: "Agility Plus is a mobile, modular coordination training system designed to enhance both body and mind. Using a 7x7 LED grid combined with an app, it enables realistic, reaction-based training for athletes, coaches, and rehabilitation professionals. The system is weatherproof, portable, and scalable — from children’s training to professional sports and therapy use.",
+    overviewShort: "Agility Plus is a mobile, modular coordination training system designed to enhance both body and mind. Using a 7x7 LED grid combined with an app, it enables realistic, reaction-based training for athletes, coaches, and rehabilitation professionals. The system is weatherproof, portable, and scalable — from children’s training to professional sports and therapy use.",
+    problem: "Traditional training methods are outdated, monotonous, and lack cognitive engagement. They often fail to provide measurable progress, leading to low motivation, therapy dropouts, and increased injury risk. Trainers and therapists are limited by inefficient 1:1 formats and lack innovative tools for scalable, personalized group training.",
+    process: "The concept was developed through extensive prototyping and real-world testing with football clubs, athletes, physiotherapists, and sports scientists. Over 20 test sessions and 50+ user surveys informed the design, focusing on usability, gamification, and measurable outcomes. Insights from startup mentors and health professionals shaped the MVP and app functionality.",
+    solution: "Agility Plus integrates LED-based movement cues with app-controlled training programs and gamified challenges. Its modular design allows quick setup indoors or outdoors, while future sensor integration will enable detailed performance analytics and AI-driven feedback.",
+    results: "Early prototypes demonstrated strong user engagement, high motivation, and positive feedback from both athletes and rehabilitation experts. The system improves training efficiency, reduces injury risks, and creates a fun, measurable experience. Agility Plus is set to become a new standard in sports and therapy training.",
     gallery: [
-      "https://images.unsplash.com/photo-1750056393326-8feed2a1c34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzbWFydHBob25lJTIwbW9ja3VwJTIwcHJvZHVjdHxlbnwxfHx8fDE3NTgyMzAxNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4MTc5ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "../../src/assets/project/agility/card.svg",
+        "../../src/assets/project/agility/product.png",
+      "../../src/assets/project/agility/poster.png"
     ],
   },
   {
     id: "2",
-    title: "Caffè Stella Polare",
+    title: "Caffé Stella Polare",
     slug: "caffe-stella-polare",
-    tags: ["Branding", "Interior Design", "Restaurant"],
-    cover:
-      "https://images.unsplash.com/photo-1657523623537-acd1e79cb2cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzU4MjMwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    summary:
-      "Complete brand identity and interior design for an artisanal coffee roastery, blending Italian heritage with modern minimalism.",
-    category: "Brand Identity",
-    year: "2023",
-    overview:
-      "Caffè Stella Polare combines traditional Italian coffee culture with contemporary design sensibilities, creating a unique third-space experience for coffee enthusiasts.",
-    problem:
-      "The client needed to differentiate their artisanal coffee shop in a saturated market while honoring their Italian family heritage and appealing to modern consumers.",
-    process:
-      "Brand discovery workshops, competitor analysis, heritage research, and collaborative design sessions with the family owners to understand their vision and values.",
-    solution:
-      "A cohesive brand system featuring a custom logotype inspired by astronomical navigation, warm earth tones, and interior design that balances industrial elements with cozy textures.",
-    results:
-      "Grand opening exceeded sales projections by 140%, featured in local design publications, and became a community gathering space with 95% customer satisfaction ratings.",
-    gallery: [
-      "https://images.unsplash.com/photo-1657523623537-acd1e79cb2cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzU4MjMwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1739918041927-f9001c82ac88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwYnJhbmRpbmclMjBkZXNpZ258ZW58MXx8fHwxNzU4MjMwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    tags: [
+      "Web Design",
+      "UX/UI",
+      "Branding",
+      "Responsive",
+      "Menu Design",
     ],
+    cover: "../../src/assets/project/caffee/logo.png",
+    summary:
+        "A modern website concept for a historic Trieste coffeehouse, highlighting Viennese café tradition with a multilingual, mobile-first menu and refined brand presentation.",
+    category: "Web Design & Branding",
+    year: "2025",
+    overview:
+        "The concept repositions Caffé Stella Polare as a classic coffeehouse in Trieste: keeping the prominent historic wordmark (recreated in a Copperplate-like style), choosing colors that fit the city while avoiding wine red, and applying a consistent photo treatment. The information architecture prepares for DE/EN/IT, with the German version mocked up. The menu is optimized for smartphones and the location is easy to find. Cultural programming (readings, music, small exhibitions) is showcased to reflect the café’s role in the city’s scene.",
+    overviewShort:
+        "Redesign of the Caffé Stella Polare website focusing on Viennese coffeehouse heritage, a Copperplate-style wordmark, Trieste-inspired colors (no wine red), a ‘cool’ photo effect, and a multilingual, mobile-first menu and location page.",
+
+    problem:
+        "The café’s web presence lacked a clear connection to its roots as a Viennese-style coffeehouse and didn’t emphasize heritage or location. The client wanted to avoid ‘gelateria’ aesthetics, keep the recognizable sign style, select Trieste-appropriate colors (no wine red), add a distinct photo effect, support DE/EN/IT, and make the menu truly usable on phones while keeping the address effortless to find. :contentReference[oaicite:2]{index=2}",
+
+    process:
+        "Scoped as a 20-hour design exercise: 2h research/ideation, 2h sourcing imagery and copy, 2h logo/wordmark rebuild, 2h wireframes, 6h desktop (home + inner), and 6h smartphone (menu + one additional page). Final comps assembled from sourced imagery (Yelp/Tripadvisor), typography test, layout system, and image-treatment explorations. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}",
+
+    solution:
+        "A refined visual system with a Copperplate-inspired headline mark, legible body type, and a Trieste-influenced palette that avoids wine red. A consistent ‘cool’ photo effect unifies imagery. The site architecture supports DE/EN/IT; the presented German version includes a home narrative (history + culture), a mobile-first menu card, and a clear ‘Find us’ section with address near Ponte Rosso. Branding and UI elements reinforce the traditional café identity while feeling current. :contentReference[oaicite:5]{index=5} :contentReference[oaicite:6]{index=6}",
+
+    results:
+        "Delivered desktop and mobile mockups demonstrating brand clarity, faster menu scanning on mobile, and a stronger sense of place and heritage. The final layouts highlight events and culture, improve wayfinding to Via Dante Alighieri 14, and establish a scalable base for multilingual rollout. :contentReference[oaicite:7]{index=7}",
+
+    gallery: [
+        "../../src/assets/project/caffee/logo.png",
+        "../../src/assets/project/caffee/page.png",
+        "../../src/assets/project/caffee/style.png",
+    ]
   },
   {
     id: "3",
@@ -78,7 +89,7 @@ export const projects: Project[] = [
     summary:
       "A collaborative platform that transforms how remote teams communicate through intelligent message organization and context-aware notifications.",
     category: "SaaS Platform",
-    year: "2024",
+    year: "2025",
     overview:
       "Echo addresses the communication chaos in remote work by providing intelligent message threading, priority-based notifications, and seamless integration with existing workflows.",
     problem:
@@ -123,12 +134,11 @@ export const projects: Project[] = [
     title: "TailMate",
     slug: "tailmate",
     tags: ["Developer Tool", "Productivity"],
-    cover:
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4MTc5ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    cover: "../../src/assets/project/tailmate/logo.png",
     summary:
       "A Chrome extension that accelerates Tailwind CSS development with intelligent class suggestions and live preview features.",
     category: "Developer Tools",
-    year: "2024",
+    year: "2025",
     overview:
       "TailMate streamlines the Tailwind CSS development workflow by providing context-aware class suggestions and real-time visual feedback.",
     problem:
@@ -140,7 +150,9 @@ export const projects: Project[] = [
     results:
       "10K+ active users, 4.9 Chrome Web Store rating, featured in CSS-Tricks newsletter, and adopted by several design agencies.",
     gallery: [
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4MTc5ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "../../src/assets/project/tailmate/logo.png",
+        "../../src/assets/project/tailmate/pattern.png",
+        "../../src/assets/project/tailmate/sticker.png",
     ],
   },
   {

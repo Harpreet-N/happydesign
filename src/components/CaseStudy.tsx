@@ -14,6 +14,8 @@ interface CaseStudyProps {
   onProjectChange: (slug: string) => void;
 }
 
+//TODO Add routing to casestudies.
+
 export function CaseStudy({
   slug,
   onBack,
@@ -188,11 +190,11 @@ export function CaseStudy({
       <div className="mb-16 px-8 md:px-16 max-w-7xl mx-auto relative z-20">
         <div className="relative">
           <div className="absolute inset-0 bg-stone rotate-1 brutal-shadow-lg" />
-          <div className="relative aspect-[16/10] overflow-hidden border-2 border-black">
+          <div className="relative aspect-[16/5] overflow-hidden border-2 border-black">
             <ImageWithFallback
               src={project.cover}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-[80vw] h-[41vh] group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute bottom-0 right-0 w-24 h-32 bg-yellow border-l-2 border-t-2 border-black" />
           </div>

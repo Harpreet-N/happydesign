@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
-import { Download, Mail } from "lucide-react";
+import {Download, ExternalLink, Mail} from "lucide-react";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
 export function ContactSection() {
@@ -14,6 +14,9 @@ export function ContactSection() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+
+
+  //TODO Add MAil service
 
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
@@ -57,6 +60,21 @@ export function ContactSection() {
   // helper for additive translateY with parallax
   const ty = (mult = 0, extra = 0) =>
     `translateY(${BASE_Y + scrollY * mult + extra}px)`;
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/harpreet-nehar-05575118a/",
+      icon: "💼",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/happysspace/",
+      icon: "🏀",
+    },
+
+  ];
+
 
   return (
     <section
@@ -265,7 +283,7 @@ export function ContactSection() {
                     Email
                   </p>
                   <p className="font-grotesk font-bold text-white">
-                    hello@harpreet.design
+                    harpreetneharyt@gmail.com
                   </p>
                 </div>
 
@@ -274,7 +292,7 @@ export function ContactSection() {
                     Location
                   </p>
                   <p className="font-grotesk font-bold text-white">
-                    Vienna & Singapore
+                    Vienna
                   </p>
                 </div>
 
@@ -290,46 +308,47 @@ export function ContactSection() {
             </div>
 
             {/* Social Links */}
-            <div {...socialAnimation.animationProps} className="bg-stone-light border-2 border-black p-6 brutal-shadow hover-lift">
+            <div {...socialAnimation.animationProps}
+                 className="bg-stone-light border-2 border-black p-6 brutal-shadow hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
                 CONNECT ONLINE
               </h4>
 
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="block bg-white border-2 border-black p-3 hover:bg-yellow hover-brutal transition-all duration-300"
-                >
-                  <span className="font-inter font-bold text-sm">
-                    LinkedIn →
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block bg-white border-2 border-black p-3 hover:bg-yellow hover-brutal transition-all duration-300"
-                >
-                  <span className="font-inter font-bold text-sm">
-                    Dribbble →
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block bg-white border-2 border-black p-3 hover:bg-yellow hover-brutal transition-all duration-300"
-                >
-                  <span className="font-inter font-bold text-sm">
-                    Behance →
-                  </span>
-                </a>
+              <div className="grid grid-cols-2 gap-4">
+                {socialLinks.map((social) => (
+                    <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group
+                        bg-white border-2 border-black hover:bg-yellow hover-brutal duration-300"
+
+                    >
+                    <span className="text-lg">
+                      {social.icon}
+                    </span>
+                      <div className="flex-1">
+                      <span className="font-roboto text-sm text-foreground group-hover:text-purple transition-colors">
+                        {social.name}
+                      </span>
+                      </div>
+                      <ExternalLink className="size-4 text-muted-foreground group-hover:text-purple transition-colors"/>
+                    </a>
+                ))}
               </div>
+
             </div>
 
             {/* Download CV */}
-            <div {...cvAnimation.animationProps} className="bg-white border-2 border-black p-6 brutal-shadow text-center hover-lift">
+            <div {...cvAnimation.animationProps}
+                 className="bg-white border-2 border-black p-6 brutal-shadow text-center hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-4">
                 DOWNLOAD CV
               </h4>
-              <button className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
-                <Download className="inline mr-2 size-4" />
+              <button
+                  className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
+                <Download className="inline mr-2 size-4"/>
                 Get Resume
               </button>
             </div>
@@ -338,7 +357,7 @@ export function ContactSection() {
       </div>
 
       {/* Bottom Divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-black" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-black"/>
     </section>
   );
 }

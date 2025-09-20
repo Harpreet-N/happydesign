@@ -5,7 +5,6 @@ import { ParallaxHero } from './components/ParallaxHero';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { CaseStudy } from './components/CaseStudy';
-import { ContactPage } from './components/ContactPage';
 import { ImpressumPage } from './components/ImpressumPage';
 import { DatenschutzPage } from './components/DatenschutzPage';
 

@@ -56,7 +56,7 @@ export function ImpressumPage({ onBack }: ImpressumPageProps) {
                 <h3 className="font-grotesk font-bold text-black text-lg mb-2">
                   Contact Information
                 </h3>
-                <p>Email: hello@harpreet.design</p>
+                <p>Email: harpreetneharyt@gmail.com</p>
                 <p>Location: Vienna, Austria & Singapore</p>
               </div>
 
@@ -105,7 +105,7 @@ export function ImpressumPage({ onBack }: ImpressumPageProps) {
             
             <div className="space-y-4 font-inter text-black">
               <p>
-                © 2024 Harpreet Singh Nehar. All rights reserved.
+                © 2025 Harpreet Singh Nehar. All rights reserved.
               </p>
               
               <p>
