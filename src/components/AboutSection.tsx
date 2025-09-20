@@ -2,6 +2,15 @@ import { useState, useEffect } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useScrollAnimation, useStaggeredAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
+import figmaIcon from "../assets/svg/figma.svg";
+import photoshopIcon from "../assets/svg/photoshop.svg";
+import illustratorIcon from "../assets/svg/illustrator.svg";
+import premiereProIcon from "../assets/svg/premierpro.svg";
+import angularIcon from "../assets/svg/angular.svg";
+import htmlIcon from "../assets/svg/html.svg";
+import cssIcon from "../assets/svg/css.svg";
+import tsIcon from "../assets/svg/typescript.svg";
+
 interface AboutSectionProps {
   onNavigate: (page: string) => void;
 }
@@ -40,24 +49,42 @@ export function AboutSection({
 
   const experience = [
     {
-      year: "2018-2020",
-      role: "UX Designer",
-      company: "Vienna Design Studio",
+      year: "2014-2019",
+      role: "Matura HTBLVA, Spengergasse",
+      company: "Computer science",
     },
     {
-      year: "2020-2022",
-      role: "Senior UX/UI Designer",
-      company: "Singapore Tech Corp",
+      year: "2021 -2023",
+      role: "Bachlor University Technikum",
+      company: "Computer science",
     },
     {
-      year: "2022-2024",
-      role: "Lead Designer",
-      company: "European Fintech",
+      year: "2023-2025",
+      role: "Master University St.Pölten",
+      company: "Graphic Design",
     },
     {
-      year: "2024-Present",
-      role: "Building Echo",
-      company: "Web3 Social dApp",
+      year: "2024 - 2024",
+      role: "Nanyang Technological University in Singapore",
+      company: "Graphic Design (semester abroad)",
+    },
+  ];
+
+  const career = [
+    {
+      year: "2020 - 2021",
+      role: "Bearingpoint - Junior Software Engineer",
+      company: "Programmer in Regulatory Technology using Java. Design and implementation of user interfaces with Vue",
+    },
+    {
+      year: "2021 - 2023",
+      role: "Raiffiesen Software - UX/UI Dual Student",
+      company: "Development of websites and user interfaces with Angular. Development of documentation using Storybook",
+    },
+    {
+      year: "2023- current",
+      role: "Raiffiesen Software - UX/UI Designer",
+      company: "Accessible web applications with Angular. UI component catalog for modern frontend solutions. Designing the banking app. Designing new components and web pages",
     },
   ];
 
@@ -67,9 +94,20 @@ export function AboutSection({
     "Design Systems",
     "Brand Identity",
     "Prototyping",
-    "User Research",
-    "Information Architecture",
+    "User Research Methods",
+    "Design Thinking and User Journey",
     "Visual Design",
+  ];
+
+  const skillsIcon = [
+    figmaIcon,
+    photoshopIcon,
+    illustratorIcon,
+    premiereProIcon,
+    angularIcon,
+    htmlIcon,
+    cssIcon,
+    tsIcon,
   ];
 
   return (
@@ -147,8 +185,6 @@ export function AboutSection({
 
           <h2 className="font-grotesk font-black text-black mb-8">
             Creating Digital Experiences
-            <br />
-            That Bridge Cultures
           </h2>
         </div>
 
@@ -157,30 +193,18 @@ export function AboutSection({
           <div className="lg:col-span-2">
             <div {...storyAnimation.animationProps} className="bg-yellow border-2 border-black p-8 brutal-shadow-lg mb-8 marble-texture hover-lift">
               <h3 className="font-grotesk font-bold text-black text-2xl mb-6">
-                FROM VIENNA TO SINGAPORE
+                FROM VIENNA
               </h3>
 
               <div className="space-y-4 font-inter text-base leading-relaxed">
                 <p>
-                  With 6+ years of experience across Austria,
-                  Singapore, Asia & Europe, I've developed a
-                  unique perspective on creating digital
-                  experiences that resonate across cultures and
-                  contexts.
+                  I began my career as a developer, working for several years in a regulatory firm before moving to Raiffeisen Software, where I took on the role of UX/UI developer. During this time, I also completed my bachelor’s degree in Computer Science.
                 </p>
-
                 <p>
-                  My approach combines systematic design
-                  thinking with cultural sensitivity, resulting
-                  in products that are both functionally
-                  excellent and emotionally compelling.
+                  Soon I realized that something was missing I wanted to dive deeper into creativity and design. This led me to pursue a master’s degree in Graphic Design at FH St. Pölten. That step planted the seeds for my passion: understanding people and customers, and designing solutions that truly fit their needs.
                 </p>
-
                 <p>
-                  Currently building <strong>Echo</strong>, a
-                  Web3 social dApp that reimagines how
-                  communities form and interact in decentralized
-                  spaces.
+                  Today, I continue to work at Raiffeisen Software, now as a designer, combining my technical foundation with a love for design and user experience.
                 </p>
               </div>
             </div>
@@ -188,11 +212,40 @@ export function AboutSection({
             {/* Experience Timeline */}
             <div {...experienceAnimation.animationProps} className="bg-stone-light border-2 border-black p-6 brutal-shadow hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
-                CAREER JOURNEY
+                EDUCATION JOURNEY
               </h4>
 
               <div className="space-y-4">
                 {experience.map((exp, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-4 pb-4 border-b border-black/20 last:border-b-0 transition-all duration-500 hover-scale"
+                    style={{ transitionDelay: `${idx * 150}ms` }}
+                  >
+                    <div className="bg-black text-white px-3 py-1 text-xs font-inter font-bold hover-brutal transition-all duration-300">
+                      {exp.year}
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="font-grotesk font-bold text-black text-sm">
+                        {exp.role}
+                      </h5>
+                      <p className="font-inter text-stone-dark text-sm">
+                        {exp.company}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CAREER Timeline */}
+            <div {...experienceAnimation.animationProps} className="bg-yellow border-2 border-black p-6 brutal-shadow hover-lift mt-6">
+              <h4 className="font-grotesk font-bold text-black text-xl mb-6">
+                CAREER JOURNEY
+              </h4>
+
+              <div className="space-y-4">
+                {career.map((exp, idx) => (
                   <div
                     key={idx}
                     className="flex items-start gap-4 pb-4 border-b border-black/20 last:border-b-0 transition-all duration-500 hover-scale"
@@ -222,9 +275,9 @@ export function AboutSection({
               <div className="absolute inset-0 bg-yellow-dark rotate-3 brutal-shadow-lg" />
               <div className="relative bg-marble marble-texture border-2 border-black w-full h-80 overflow-hidden hover-lift">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1601119738659-8c7e517dac49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                  src="../../src/assets/img/happy2.jpeg"
                   alt="Greek sculpture head - representing creative thinking"
-                  className="w-full h-full object-cover opacity-80 transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover opacity-95 transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute top-0 left-0 w-20 h-24 bg-stone border-r-2 border-b-2 border-black hover-rotate transition-transform duration-300" />
                 <div className="absolute bottom-0 right-0 w-16 h-20 bg-yellow border-l-2 border-t-2 border-black hover-rotate transition-transform duration-300" />
@@ -258,17 +311,46 @@ export function AboutSection({
                 ))}
               </div>
             </div>
+
+            {/* Skills Icon Icon Grid */}
+            <div {...skillsAnimation.animationProps}
+                 className="bg-white border-2 border-black p-6 brutal-shadow hover-lift mt-3">
+              <h4 className="font-grotesk font-bold text-black text-xl mb-6">
+                Skills
+              </h4>
+
+              <div
+                  ref={skillsContainerRef}
+                  className="flex flex-wrap gap-3"
+              >
+                {skillsIcon.map((skill, index) => (
+                    <div
+                        key={index}
+                        className={`flex items-center justify-center border border-black p-3 white hover-scale transition-all duration-500 ${getItemAnimationClass(index)}`}
+                        style={{transitionDelay: `${index * 100}ms`}}
+                    >
+                      <ImageWithFallback
+                          src={skill}
+                          alt="Skill Icon"
+                          className="w-8 h-8"
+                      />
+                    </div>
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
 
         {/* Abstract Typography Element */}
-        <div className="absolute bottom-10 left-10 text-stone text-8xl font-grotesk font-black opacity-15 select-none hover-rotate transition-transform duration-1000">
+        <div
+            className="absolute bottom-10 left-10 text-stone text-8xl font-grotesk font-black opacity-15 select-none hover-rotate transition-transform duration-1000">
           ABOUT
         </div>
       </div>
 
       {/* Bottom Divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-black" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-black"/>
     </section>
   );
 }

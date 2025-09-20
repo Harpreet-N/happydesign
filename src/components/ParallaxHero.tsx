@@ -145,9 +145,7 @@ export function ParallaxHero() {
                   UX/UI & BRAND DESIGNER
                 </h2>
                 <p className="font-inter text-base text-stone-dark leading-relaxed">
-                  Merging design, technology & culture through 6+
-                  years of global experience across Austria,
-                  Singapore & Europe.
+                  I merge design, technology, and culture. As a graphic designer and developer, I’m here to bring your ideas to life.
                 </p>
               </div>
 
@@ -182,14 +180,14 @@ export function ParallaxHero() {
                 <div className="absolute inset-0 bg-yellow-dark rotate-3 brutal-shadow-lg"/>
                 <div className="relative w-80 h-96 border-2 border-black overflow-hidden bg-marble marble-texture">
                   <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1551047163-78c1a36ad573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                      src="../../src/assets/img/happy.jpg"
                       alt="Greek marble bust"
                       className="w-full h-full object-cover object-center scale-110 opacity-90 transition-transform duration-500 hover:scale-115"
                   />
                   <div
-                      className="absolute top-0 right-0 w-24 h-32 bg-yellow border-l-2 border-b-2 border-black hover-rotate transition-transform duration-300"/>
+                      className="absolute top-0 right-0 w-12 h-32 bg-yellow border-l-2 border-b-2 border-black hover-rotate transition-transform duration-300"/>
                   <div
-                      className="absolute bottom-0 left-0 w-32 h-20 bg-stone border-r-2 border-t-2 border-black hover-rotate transition-transform duration-300"/>
+                      className="absolute bottom-0 left-0 w-22 h-20 bg-stone border-r-2 border-t-2 border-black hover-rotate transition-transform duration-300"/>
                 </div>
               </div>
 
@@ -201,7 +199,7 @@ export function ParallaxHero() {
               <div
                   className="absolute -bottom-4 -right-4 bg-black text-white p-3 rotate-6 hover-brutal transition-all duration-300">
               <span className="font-grotesk font-bold text-sm">
-                EST. 2018
+                UX/UI
               </span>
               </div>
 

@@ -123,9 +123,8 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
 
               <div className="bg-white border-2 border-black p-4 brutal-shadow hover-lift">
                 <p className="font-inter text-stone-dark">
-                  A curated collection of design projects
-                  spanning UX/UI, branding, and digital
-                  experiences across various industries.
+                  A collection of design projects
+                  spanning UX/UI, branding, rebranding.
                 </p>
               </div>
             </div>
