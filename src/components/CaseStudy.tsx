@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import {type Project, projects } from "../data/projects";
 import { Button } from "./ui/button";
 import {
@@ -8,19 +9,11 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-interface CaseStudyProps {
-  slug: string;
-  onBack: () => void;
-  onProjectChange: (slug: string) => void;
-}
+interface CaseStudyProps {}
 
-//TODO Add routing to casestudies.
-
-export function CaseStudy({
-  slug,
-  onBack,
-  onProjectChange,
-}: CaseStudyProps) {
+export function CaseStudy({}: CaseStudyProps) {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const [project, setProject] = useState<Project | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -36,6 +29,8 @@ export function CaseStudy({
   }, []);
 
   useEffect(() => {
+    if (!slug) return;
+    
     const foundProject = projects.find((p) => p.slug === slug);
     setProject(foundProject || null);
     setIsLoaded(false);
@@ -56,7 +51,7 @@ export function CaseStudy({
               Project Not Found
             </h1>
             <Button
-              onClick={onBack}
+              onClick={() => navigate('/')}
               className="bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black transition-all duration-300 brutal-shadow-sm"
             >
               <ArrowLeft className="mr-2 size-4" />
@@ -132,7 +127,7 @@ export function CaseStudy({
       >
         <Button
           variant="ghost"
-          onClick={onBack}
+          onClick={() => navigate('/')}
           className="mb-8 -ml-4 bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black transition-all duration-300 brutal-shadow-sm"
         >
           <ArrowLeft className="mr-2 size-4" />
@@ -299,7 +294,7 @@ export function CaseStudy({
               VIEW ALL WORK
             </h3>
             <Button
-              onClick={onBack}
+              onClick={() => navigate('/')}
               className="bg-yellow text-black border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark transition-all duration-300 brutal-shadow-sm"
             >
               <ExternalLink className="mr-2 size-4" />
@@ -317,7 +312,7 @@ export function CaseStudy({
                 <Button
                   variant="ghost"
                   onClick={() =>
-                    onProjectChange(prevProject.slug)
+                    navigate(`/project/${prevProject.slug}`)
                   }
                   className="text-white hover:text-yellow font-grotesk font-bold p-0 h-auto"
                 >
@@ -335,7 +330,7 @@ export function CaseStudy({
                 <Button
                   variant="ghost"
                   onClick={() =>
-                    onProjectChange(nextProject.slug)
+                    navigate(`/project/${nextProject.slug}`)
                   }
                   className="text-white hover:text-yellow font-grotesk font-bold p-0 h-auto"
                 >
