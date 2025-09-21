@@ -4,6 +4,7 @@ export interface Project {
   slug: string;
   tags: string[];
   cover: string;
+  heroImage?: string;
   summary: string;
   category: string;
   year: string;
@@ -25,6 +26,7 @@ export const projects: Project[] = [
     slug: "agility-plus",
     tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
     cover: "../../src/assets/project/agility/logo.svg",
+    heroImage: "../../src/assets/project/agility/logo.svg",
     summary: "Agility Plus is a modular, digital training system that combines physical agility with cognitive challenges through LED-guided exercises and an app-based platform.",
     category: "UX/UI & Product Design",
     year: "2025",
@@ -52,6 +54,7 @@ export const projects: Project[] = [
       "Menu Design",
     ],
     cover: "../../src/assets/project/caffee/logo.png",
+    heroImage: "../../src/assets/project/caffee/cover.png",
     summary:
         "A modern website concept for a historic Trieste coffeehouse, highlighting Viennese café tradition with a multilingual, mobile-first menu and refined brand presentation.",
     category: "Web Design & Branding",
@@ -74,7 +77,7 @@ export const projects: Project[] = [
         "Delivered desktop and mobile mockups demonstrating brand clarity, faster menu scanning on mobile, and a stronger sense of place and heritage. The final layouts highlight events and culture, improve wayfinding to Via Dante Alighieri 14, and establish a scalable base for multilingual rollout. :contentReference[oaicite:7]{index=7}",
 
     gallery: [
-        "../../src/assets/project/caffee/logo.png",
+        "../../src/assets/project/caffee/cover.png",
         "../../src/assets/project/caffee/page.png",
         "../../src/assets/project/caffee/style.png",
     ]

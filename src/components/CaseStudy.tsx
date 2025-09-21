@@ -190,9 +190,9 @@ export function CaseStudy({
       <div className="mb-16 px-8 md:px-16 max-w-7xl mx-auto relative z-20">
         <div className="relative">
           <div className="absolute inset-0 bg-stone rotate-1 brutal-shadow-lg" />
-          <div className="relative aspect-[16/5] overflow-hidden border-2 border-black">
+          <div className="relative overflow-hidden border-2 border-black">
             <ImageWithFallback
-              src={project.cover}
+              src={project.heroImage}
               alt={project.title}
               className="w-[80vw] h-[41vh] group-hover:scale-105 transition-transform duration-500"
             />
