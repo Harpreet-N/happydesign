@@ -222,6 +222,35 @@ export function CaseStudy({}: CaseStudyProps) {
           </div>
         </section>
 
+        {/* Gallery PROBLEM */}
+        {project.problemGallery && project.problemGallery.length > 1 && (
+            <section>
+              <div className="bg-white border-2 border-black p-6 mb-8 brutal-shadow">
+                <h2 className="font-grotesk font-bold text-black mb-6">
+                  OLD DESIGN GALLERY
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {project.problemGallery.map((image, index) => (
+                    <div key={index} className="relative">
+                      <div className="bg-yellow-dark brutal-shadow-lg">
+                        <div className="overflow-hidden border-2 border-black">
+                          <ImageWithFallback
+                              src={image}
+                              alt={`${project.title} gallery image ${index + 1}`}
+                              className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                ))}
+              </div>
+            </section>
+        )}
+
+
+
         {/* Process */}
         <section>
           <div className="bg-stone-light border-2 border-black p-8 brutal-shadow-lg">
@@ -241,18 +270,22 @@ export function CaseStudy({}: CaseStudyProps) {
               <h2 className="font-grotesk font-bold text-black mb-6">
                 PROJECT GALLERY
               </h2>
+              <p className="font-inter text-base text-black leading-relaxed">
+                The project gallery offers a comprehensive view of the design process, including the brand style, mockups, logo development, landing page, and additional visual assets that illustrate the project outcome.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {project.gallery.map((image, index) => (
-                <div key={index} className="relative">
-                  <div className="absolute inset-0 bg-yellow-dark rotate-2 brutal-shadow-lg" />
-                  <div className="relative aspect-[4/3] overflow-hidden border-2 border-black">
-                    <ImageWithFallback
-                      src={image}
-                      alt={`${project.title} gallery image ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
+                  <div key={index} className="relative">
+                  <div className="bg-yellow-dark brutal-shadow-lg">
+                    <div className="overflow-hidden border-2 border-black">
+                      <ImageWithFallback
+                        src={image}
+                        alt={`${project.title} gallery image ${index + 1}`}
+                        className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -283,6 +316,53 @@ export function CaseStudy({}: CaseStudyProps) {
             </p>
           </div>
         </section>
+
+        {/* Links & Files */}
+        {((project.links && project.links.length > 0) || (project.files && project.files.length > 0)) && (
+          <section>
+            <div className="bg-stone-light border-2 border-black p-8 brutal-shadow-lg">
+              <h2 className="font-grotesk font-bold text-black mb-6">
+                LINKS & FILES
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                {/* Links */}
+                {project.links && project.links.map((link, index) => (
+                  <a
+                    key={`link-${index}`}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
+                  >
+                    <ExternalLink className="size-4" />
+                    {link.includes('instagram') ? 'Instagram' : 
+                     link.includes('behance') ? 'Behance' :
+                     link.includes('dribbble') ? 'Dribbble' :
+                     link.includes('github') ? 'GitHub' :
+                     'Visit Site'}
+                  </a>
+                ))}
+                
+                {/* Files */}
+                {project.files && project.files.map((file, index) => {
+                  const fileName = file.split('/').pop() || `file-${index + 1}`;
+                  
+                  return (
+                    <a
+                      key={`file-${index}`}
+                      href={file}
+                      download={fileName}
+                      className="bg-black text-white border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-stone-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
+                    >
+                      <ExternalLink className="size-4" />
+                      Download File
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Navigation */}

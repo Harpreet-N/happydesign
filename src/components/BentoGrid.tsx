@@ -190,7 +190,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
                     </h3>
 
                     <p className="font-inter text-stone-dark text-sm leading-relaxed mb-4">
-                      {project.overviewShort}
+                      {project.summary}
                     </p>
 
                     <div className="flex flex-wrap gap-2">

@@ -9,12 +9,14 @@ export interface Project {
   category: string;
   year: string;
   overview: string;
-  overviewShort?: string;
   problem: string;
+  problemGallery?: string[];
   process: string;
   solution: string;
   results: string;
   gallery: string[];
+  links?: string[];
+  files?: string[];
 }
 
 
@@ -22,24 +24,39 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Agility Plus",
-    slug: "agility-plus",
-    tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
-    cover: "../../src/assets/project/agility/logo.svg",
-    heroImage: "../../src/assets/project/agility/logo.svg",
-    summary: "Agility Plus is a modular, digital training system that combines physical agility with cognitive challenges through LED-guided exercises and an app-based platform.",
-    category: "UX/UI & Product Design",
-    year: "2025",
-    overview: "Agility Plus is a mobile, modular coordination training system designed to enhance both body and mind. Using a 7x7 LED grid combined with an app, it enables realistic, reaction-based training for athletes, coaches, and rehabilitation professionals. The system is weatherproof, portable, and scalable — from children’s training to professional sports and therapy use.",
-    overviewShort: "Agility Plus is a mobile, modular coordination training system designed to enhance both body and mind. Using a 7x7 LED grid combined with an app, it enables realistic, reaction-based training for athletes, coaches, and rehabilitation professionals. The system is weatherproof, portable, and scalable — from children’s training to professional sports and therapy use.",
-    problem: "Traditional training methods are outdated, monotonous, and lack cognitive engagement. They often fail to provide measurable progress, leading to low motivation, therapy dropouts, and increased injury risk. Trainers and therapists are limited by inefficient 1:1 formats and lack innovative tools for scalable, personalized group training.",
-    process: "The concept was developed through extensive prototyping and real-world testing with football clubs, athletes, physiotherapists, and sports scientists. Over 20 test sessions and 50+ user surveys informed the design, focusing on usability, gamification, and measurable outcomes. Insights from startup mentors and health professionals shaped the MVP and app functionality.",
-    solution: "Agility Plus integrates LED-based movement cues with app-controlled training programs and gamified challenges. Its modular design allows quick setup indoors or outdoors, while future sensor integration will enable detailed performance analytics and AI-driven feedback.",
-    results: "Early prototypes demonstrated strong user engagement, high motivation, and positive feedback from both athletes and rehabilitation experts. The system improves training efficiency, reduces injury risks, and creates a fun, measurable experience. Agility Plus is set to become a new standard in sports and therapy training.",
+    title: "MyDiabetes – Website Redesign",
+    slug: "mydiabetes",
+    tags: ["UX/UI", "Web Redesign", "Healthcare", "Case Study"],
+    cover: "../../src/assets/project/diabetes/logo.svg",
+    heroImage: "../../src/assets/project/diabetes/cover.png",
+    summary:
+        "A complete redesign of the Diabär association’s website to improve accessibility, structure, and emotional connection for children and families affected by diabetes.",
+    category: "UX/UI Design",
+    year: "2023",
+    overview:
+        "The MyDiabetes project was a redesign of the Diabär association’s website, originally focused on children and families affected by Type 1 and Type 2 diabetes. The old website suffered from poor responsiveness, unclear structure, and outdated visuals. The goal was to create a modern, user-friendly platform that conveys trust, community, and hope while making essential resources easier to access. The redesign emphasizes clarity, accessibility, and a child-friendly design language, supported by new branding and a modular design system.",
+    problem:
+        "The previous Diabär website was outdated, text-heavy, and not responsive. Its unclear navigation and lack of visual identity made it difficult for users—especially parents and children—to find reliable information, connect with the community, or access services such as events, downloads, or support groups.",
+    process:
+        "The redesign began with a full content and competitor audit to identify strengths and weaknesses of existing diabetes-related platforms. User research, including personas and use cases, informed the requirements for accessibility, clarity, and emotional tone. A new visual identity was developed, including a color palette, typography, and logo, to reflect a more modern and supportive brand. Wireframes and prototypes were created for desktop and mobile, followed by hi-fi designs that integrated a modular component library. The user experience was planned around simplified navigation, community features, and relevant resources." +
+        " If you are more interested in the process in the Links section you can find a pdf with the whole process (Competitor Audit, Product analysis, Use-Case, User Stories, User Flow and Component Library",
+    solution:
+        "The final design introduces a clear, responsive structure with improved navigation and an accessible, family-friendly visual identity. Key improvements include a simplified homepage, event and booking functionality, a dedicated children’s section, and integration of educational resources. A modern design system ensures consistency across all pages while reflecting the values of support, community, and professionalism.",
+    results:
+        "The MyDiabetes redesign delivers a structured, engaging, and inclusive platform tailored to children, families, and medical professionals. The solution increases usability, improves emotional resonance, and ensures that vital information is easy to find. By modernizing the Diabär brand and creating a scalable design system, the project enhances both user trust and organizational credibility. Click the first link in the 'Links and Files' section to see the actual website.",
     gallery: [
-        "../../src/assets/project/agility/card.svg",
-        "../../src/assets/project/agility/product.png",
-      "../../src/assets/project/agility/poster.png"
+      "../../src/assets/project/diabetes/stylescape.png",
+      "../../src/assets/project/diabetes/component.png",
+      "../../src/assets/project/diabetes/desktop_1.png",
+      "../../src/assets/project/diabetes/desktop.png",
+    ],
+    problemGallery: [
+      "../../src/assets/project/diabetes/diabaer/img.png",
+      "../../src/assets/project/diabetes/diabaer/img_1.png",
+    ],
+    links: [
+      "https://diabetesvernetzt.at/",
+      "../../src/assets/project/files/Nehar_Harpreet_Diabetes.pdf",
     ],
   },
   {
@@ -58,57 +75,119 @@ export const projects: Project[] = [
     summary:
         "A modern website concept for a historic Trieste coffeehouse, highlighting Viennese café tradition with a multilingual, mobile-first menu and refined brand presentation.",
     category: "Web Design & Branding",
-    year: "2025",
+    year: "2024",
     overview:
         "The concept repositions Caffé Stella Polare as a classic coffeehouse in Trieste: keeping the prominent historic wordmark (recreated in a Copperplate-like style), choosing colors that fit the city while avoiding wine red, and applying a consistent photo treatment. The information architecture prepares for DE/EN/IT, with the German version mocked up. The menu is optimized for smartphones and the location is easy to find. Cultural programming (readings, music, small exhibitions) is showcased to reflect the café’s role in the city’s scene.",
-    overviewShort:
-        "Redesign of the Caffé Stella Polare website focusing on Viennese coffeehouse heritage, a Copperplate-style wordmark, Trieste-inspired colors (no wine red), a ‘cool’ photo effect, and a multilingual, mobile-first menu and location page.",
-
     problem:
-        "The café’s web presence lacked a clear connection to its roots as a Viennese-style coffeehouse and didn’t emphasize heritage or location. The client wanted to avoid ‘gelateria’ aesthetics, keep the recognizable sign style, select Trieste-appropriate colors (no wine red), add a distinct photo effect, support DE/EN/IT, and make the menu truly usable on phones while keeping the address effortless to find. :contentReference[oaicite:2]{index=2}",
+        "The café’s web presence lacked a clear connection to its roots as a Viennese-style coffeehouse and didn’t emphasize heritage or location. The client wanted to avoid ‘gelateria’ aesthetics, keep the recognizable sign style, select Trieste-appropriate colors (no wine red), add a distinct photo effect, support DE/EN/IT, and make the menu truly usable on phones while keeping the address effortless to find.",
+    problemGallery: [
 
+    ],
     process:
-        "Scoped as a 20-hour design exercise: 2h research/ideation, 2h sourcing imagery and copy, 2h logo/wordmark rebuild, 2h wireframes, 6h desktop (home + inner), and 6h smartphone (menu + one additional page). Final comps assembled from sourced imagery (Yelp/Tripadvisor), typography test, layout system, and image-treatment explorations. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}",
-
+        "The project was structured as a focused design exercise, covering research and ideation, imagery and copy sourcing, logo and wordmark refinement, wireframing, and the creation of desktop and mobile layouts. The final compositions were assembled using sourced imagery, typography tests, a defined layout system, and image-treatment explorations.",
     solution:
-        "A refined visual system with a Copperplate-inspired headline mark, legible body type, and a Trieste-influenced palette that avoids wine red. A consistent ‘cool’ photo effect unifies imagery. The site architecture supports DE/EN/IT; the presented German version includes a home narrative (history + culture), a mobile-first menu card, and a clear ‘Find us’ section with address near Ponte Rosso. Branding and UI elements reinforce the traditional café identity while feeling current. :contentReference[oaicite:5]{index=5} :contentReference[oaicite:6]{index=6}",
+        "A refined visual cooperate design. The site architecture supports DE/EN/IT; the presented German version includes a home narrative (history + culture), a mobile-first menu card, and a clear ‘Find us’ section with address. Branding and UI elements reinforce the traditional café identity while feeling current.",
 
     results:
-        "Delivered desktop and mobile mockups demonstrating brand clarity, faster menu scanning on mobile, and a stronger sense of place and heritage. The final layouts highlight events and culture, improve wayfinding to Via Dante Alighieri 14, and establish a scalable base for multilingual rollout. :contentReference[oaicite:7]{index=7}",
+        "Delivered desktop and mobile mockups demonstrating brand clarity, faster menu scanning on mobile, and a stronger sense of place and heritage. The final layouts highlight events and culture, improve wayfinding to Via Dante Alighieri 14, and establish a scalable base for multilingual rollout.",
 
     gallery: [
-        "../../src/assets/project/caffee/cover.png",
-        "../../src/assets/project/caffee/page.png",
-        "../../src/assets/project/caffee/style.png",
+      "../../src/assets/project/caffee/cover.png",
+      "../../src/assets/project/caffee/style.png",
+      "../../src/assets/project/caffee/page.png",
+      "../../src/assets/project/caffee/page2.png",
     ]
   },
   {
     id: "3",
-    title: "Echo",
-    slug: "echo",
-    tags: ["Web App", "SaaS", "Communication"],
-    cover:
-      "https://images.unsplash.com/photo-1631006732121-a6da2f4864d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVyZmFjZSUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTgyMzAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    title: "MyDiabetes – Mobile Game Redesign",
+    slug: "mydiabetes-game",
+    tags: ["UX/UI", "Mobile App", "Gamification", "Healthcare"],
+    cover: "../../src/assets/project/diabetes/logo.svg",
+    heroImage: "../../src/assets/project/diabetes/cover.png",
     summary:
-      "A collaborative platform that transforms how remote teams communicate through intelligent message organization and context-aware notifications.",
-    category: "SaaS Platform",
-    year: "2025",
+        "A redesign of the MyDiabetes educational mobile game that helps children learn about diabetes through play, blending gamification and health education with a modern visual identity.",
+    category: "Mobile App UX/UI",
+    year: "2023",
     overview:
-      "Echo addresses the communication chaos in remote work by providing intelligent message threading, priority-based notifications, and seamless integration with existing workflows.",
+        "The MyDiabetes game app was developed as an educational tool for children to learn about diabetes in an engaging and playful way. Inspired by the mechanics of simple interactive games, the app allows children to care for an avatar by feeding them, giving insulin, and managing daily routines. The redesign task focused on modernizing the app’s interface, improving usability, and creating a cohesive stylescape to align the visual identity with the educational goals.",
     problem:
-      "Remote teams struggle with communication overload, important messages getting lost in chat noise, and lack of context when switching between different communication tools.",
+        "The existing app had outdated visuals, lacked consistency, and failed to keep children engaged. The user interface was not intuitive, and the overall design did not reflect the educational purpose or emotional tone required for young audiences learning about diabetes.",
+    problemGallery: [
+        "../../src/assets/project/appDiabetes/old/old1.png",
+        "../../src/assets/project/appDiabetes/old/memorygame.png",
+        "../../src/assets/project/appDiabetes/old/quiz.png",
+        "../../src/assets/project/appDiabetes/old/explain.png",
+    ],
     process:
-      "6-month user research phase with 200+ remote workers, prototype testing, A/B testing of core features, and iterative design improvements based on user feedback.",
+        "The redesign began with an analysis of the existing app, identifying gaps in usability and visual engagement. A stylescape was developed to define a modern, child-friendly aesthetic using playful colors, rounded shapes, and clear iconography. Wireframes and high-fidelity mockups were created to redesign core interactions, including avatar care (feeding, insulin management) and game-like mechanics inspired by pool-style play. The design process emphasized both fun and clarity, ensuring educational content remained central.",
     solution:
-      "An AI-powered communication hub that automatically organizes conversations by context, provides smart summaries, and integrates with popular productivity tools.",
+        "The final redesign delivers a vibrant, accessible, and engaging app experience. The updated interface introduces a playful yet educational visual language, guiding children through diabetes-related tasks in a way that feels like a game. The avatar interaction system makes learning approachable and fun, while a modular stylescape ensures consistency across screens and future updates.",
     results:
-      "Beta launch with 15 enterprise clients, 89% reduction in communication-related confusion reported by users, and $2M seed funding secured.",
+        "The redesigned MyDiabetes game app successfully combines education and entertainment, making it easier for children to understand diabetes management in a safe and interactive way. The modernized design increases engagement, improves clarity, and aligns with the broader mission of supporting children and families affected by diabetes.",
     gallery: [
-      "https://images.unsplash.com/photo-1631006732121-a6da2f4864d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGludGVyZmFjZSUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTgyMzAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "../../src/assets/project/appDiabetes/start.png",
+      "../../src/assets/project/appDiabetes/food.png",
+      "../../src/assets/project/appDiabetes/messen.png",
+      "../../src/assets/project/appDiabetes/quiz.png",
     ],
   },
   {
     id: "4",
+    title: "Xocoatl – Der Kakao der Azteken",
+    slug: "xocoatl-branding",
+    tags: [
+      "Branding",
+      "Logo Design",
+      "Packaging",
+      "Web Design",
+      "Identity",
+      "Brand Guide"
+    ],
+    cover: "../../src/assets/project/xocoatl/logo.png",
+    heroImage: "../../src/assets/project/xocoatl/hero.png",
+    summary: "Branding for Xocoatl: modernizing a traditional Aztec cocoa drink with authenticity, quality, and sustainability in mind.",
+    category: "Brand Identity & Packaging",
+    year: "2024",
+    overview: "Xocoatl is a visual identity project aimed at bringing a traditional Aztec cocoa drink into the modern supermarket space. The design was crafted to balance tradition with modernity, emphasizing authenticity, strength, and transparency. Across logo, packaging, web and merchandise, the brand aims to feel noble and sustainable.",
+    problem: "Traditional cocoa branding often leans on clichés, lacks storytelling, and rarely conveys the story of pure ingredients and heritage clearly. Xocoatl needed a visual identity that elevates its roots, communicates values of quality and sustainability, and stands out in competitive retail packaging.",
+    process: "The work started with concept development around heritage, ingredient purity, and visual storytelling. A stylescape was created to unify logo, typography, color, illustration and imagery. Packaging designs were prototyped along with web/landing concepts and merchandise. All assets were consolidated into a brand guide to ensure consistency across touchpoints.",
+    solution: "Delivered a full brand identity including a strong wordmark/logo, illustrations, packaging, website/landing page and merchandise designs. Visual style conveys both tradition and modernity using robust typography, earthy palettes, and clean layouts. Brand guide ensures visual consistency and scalability.",
+    results: "The identity gives Xocoatl a refined and authentic presence in retail. Packaging and visual materials feel premium, appealing to conscious consumers. The web landing enhances brand narrative. Merchandise extends recognition. The brand guide sets up Xocoatl for future growth and high-quality extensions.",
+    gallery: [
+        "../../src/assets/project/xocoatl/logo.png",
+        "../../src/assets/project/xocoatl/stylescape.png",
+        "../../src/assets/project/xocoatl/FontSide.jpg",
+        "../../src/assets/project/xocoatl/BackSide.png",
+        "../../src/assets/project/xocoatl/bean_scene_coffee_landingpage.png",
+        "../../src/assets/project/xocoatl/bean_scene_coffee_landingpage1.png",
+    ],
+  },
+  {
+    id: "5",
+    title: "Agility Plus",
+    slug: "agility-plus",
+    tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
+    cover: "../../src/assets/project/agility/logo.svg",
+    heroImage: "../../src/assets/project/agility/logo.svg",
+    summary: "Agility Plus is a modular, digital training system that combines physical agility with cognitive challenges through LED-guided exercises and an app-based platform.",
+    category: "UX/UI & Product Design",
+    year: "2025",
+    overview: "Agility Plus is a mobile, modular coordination training system designed to enhance both body and mind. Using a 7x7 LED grid combined with an app, it enables realistic, reaction-based training for athletes, coaches, and rehabilitation professionals. The system is weatherproof, portable, and scalable — from children’s training to professional sports and therapy use.",
+    problem: "Traditional training methods are outdated, monotonous, and lack cognitive engagement. They often fail to provide measurable progress, leading to low motivation, therapy dropouts, and increased injury risk. Trainers and therapists are limited by inefficient 1:1 formats and lack innovative tools for scalable, personalized group training.",
+    process: "The concept was developed through extensive prototyping and real-world testing with football clubs, athletes, physiotherapists, and sports scientists. Over 20 test sessions and 50+ user surveys informed the design, focusing on usability, gamification, and measurable outcomes. Insights from startup mentors and health professionals shaped the MVP and app functionality.",
+    solution: "Agility Plus integrates LED-based movement cues with app-controlled training programs and gamified challenges. Its modular design allows quick setup indoors or outdoors, while future sensor integration will enable detailed performance analytics and AI-driven feedback.",
+    results: "Early prototypes demonstrated strong user engagement, high motivation, and positive feedback from both athletes and rehabilitation experts. The system improves training efficiency, reduces injury risks, and creates a fun, measurable experience. Agility Plus is set to become a new standard in sports and therapy training.",
+    gallery: [
+        "../../src/assets/project/agility/card.svg",
+        "../../src/assets/project/agility/product.png",
+      "../../src/assets/project/agility/poster.png",
+      "../../src/assets/project/agility/merch.svg"
+    ],
+    links: ["https://www.instagram.com/agility.plus/", "https://preview-4ccc8c2f--agility-plus-ignite.lovable.app/?fbclid=PAZXh0bgNhZW0CMTEAAacxjyUuJ47Ak5oaRTnneGoVNjYld6n0-19TlMYUaioZMgB3nOXxbpxlPqqEFg_aem_-Q9QmzZlM6w5h1UlSn0GrQ"],
+  },
+  {
+    id: "6",
     title: "Burrito Casa",
     slug: "burrito-casa",
     tags: ["Mobile App", "Food Service", "E-commerce"],
@@ -133,7 +212,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "5",
+    id: "7",
     title: "TailMate",
     slug: "tailmate",
     tags: ["Developer Tool", "Productivity"],
@@ -157,30 +236,6 @@ export const projects: Project[] = [
         "../../src/assets/project/tailmate/pattern.png",
         "../../src/assets/project/tailmate/sticker.png",
     ],
-  },
-  {
-    id: "6",
-    title: "Xocoatl",
-    slug: "xocoatl",
-    tags: ["E-commerce", "Branding", "Luxury"],
-    cover:
-      "https://images.unsplash.com/photo-1688156045299-603034420e95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9tZXRyaWMlMjBhYnN0cmFjdCUyMGJhY2tncm91bmQlMjBtaW5pbWFsfGVufDF8fHx8MTc1ODIzMDE3MHww&ixlib=rb-4.1.0&q=80&w=1080",
-    summary:
-      "An artisanal chocolate brand and e-commerce platform celebrating ancient cacao traditions with modern sustainability practices.",
-    category: "E-commerce",
-    year: "2023",
-    overview:
-      "Xocoatl bridges ancient Mesoamerican chocolate traditions with contemporary luxury market expectations through storytelling and sustainable sourcing.",
-    problem:
-      "The premium chocolate market lacks authentic cultural storytelling and transparent sourcing information that modern conscious consumers demand.",
-    process:
-      "Cultural research, supply chain analysis, consumer interviews, brand strategy development, and sustainable packaging design.",
-    solution:
-      "A premium brand identity with educational content about cacao origins, transparent sourcing information, and an e-commerce platform that tells each chocolate's story.",
-    results:
-      "Launched with 12 luxury retailers, achieved break-even within 8 months, and won 'Best New Brand' at the Specialty Food Association awards.",
-    gallery: [
-      "https://images.unsplash.com/photo-1688156045299-603034420e95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9tZXRyaWMlMjBhYnN0cmFjdCUyMGJhY2tncm91bmQlMjBtaW5pbWFsfGVufDF8fHx8MTc1ODIzMDE3MHww&ixlib=rb-4.1.0&q=80&w=1080",
-    ],
+    links: ["https://www.figma.com/make/SbUlpy3ZyslprpDDOYFONI/Dog-Adoption-Mobile-Landing-Page?node-id=0-1&t=3IAkT5HpeFViZrT6-1"]
   },
 ];
