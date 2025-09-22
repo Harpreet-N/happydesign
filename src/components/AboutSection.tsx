@@ -105,9 +105,9 @@ export function AboutSection({
     illustratorIcon,
     premiereProIcon,
     angularIcon,
+    tsIcon,
     htmlIcon,
     cssIcon,
-    tsIcon,
   ];
 
   return (
@@ -301,7 +301,7 @@ export function AboutSection({
                 {skills.map((skill, index) => (
                   <div
                     key={index}
-                    className={`bg-stone-light border border-black p-3 hover-scale transition-all duration-500 ${getItemAnimationClass(index)}`}
+                    className={`bg-stone-light border border-black p-3 hover-scale transition-all duration-200 ${getItemAnimationClass(index)}`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <span className="font-inter font-medium text-sm">

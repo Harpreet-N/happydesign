@@ -190,25 +190,32 @@ export const projects: Project[] = [
     id: "6",
     title: "Burrito Casa",
     slug: "burrito-casa",
-    tags: ["Mobile App", "Food Service", "E-commerce"],
-    cover:
-      "https://images.unsplash.com/photo-1739918041927-f9001c82ac88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwYnJhbmRpbmclMjBkZXNpZ258ZW58MXx8fHwxNzU4MjMwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    tags: ["Branding", "Concept Project", "Food Service"],
+    cover: "../../src/assets/project/burrito/cover.png",
+    heroImage: "../../src/assets/project/burrito/hero.png",
     summary:
-      "A mobile ordering platform for a local burrito chain, featuring customizable orders and loyalty rewards.",
-    category: "Mobile Commerce",
+        "A self-initiated concept project exploring how a modern burrito and taco brand could look and feel across digital and physical touchpoints.",
+    category: "Concept / Branding",
     year: "2023",
     overview:
-      "Burrito Casa needed a digital transformation to compete with larger chains while maintaining their authentic, local brand identity.",
+        "Burrito Casa is a speculative design project where I imagined creating the branding and digital presence for a playful, modern burrito and taco restaurant. The goal was to explore how vibrant visual identity, bold typography, and fun illustrations could merge into a cohesive brand system.",
     problem:
-      "Long wait times during peak hours, difficulty managing custom orders, and no system for customer loyalty or repeat business tracking.",
+        "There wasn’t a real client — this was a creative challenge I set myself to push branding, UI/UX, and identity design skills within the food industry.",
     process:
-      "Restaurant operations analysis, customer journey mapping, staff interviews, and co-design sessions with restaurant management.",
+        "I sketched out initial moodboards, developed a stylescape, created logo iterations, and designed mockups for both digital and physical applications such as menus, packaging, social media, and a mobile ordering experience.",
     solution:
-      "A streamlined mobile app with visual order customization, real-time preparation tracking, and a gamified loyalty program that encourages repeat visits.",
+        "A bold, rebellious brand identity with vibrant colors, modern typography, and playful illustrations that challenge clichés around Mexican food branding. The concept extends across packaging, merch, and a mobile ordering app.",
     results:
-      "40% increase in average order value, 60% reduction in order errors, and 300% growth in repeat customers within 6 months.",
+        "As a concept project, Burrito Casa demonstrates my ability to develop a complete brand system from scratch, combining strategy, identity design, and user experience into one cohesive vision.",
     gallery: [
-      "https://images.unsplash.com/photo-1739918041927-f9001c82ac88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwYnJhbmRpbmclMjBkZXNpZ258ZW58MXx8fHwxNzU4MjMwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "../../src/assets/project/burrito/stylescape.png",
+      "../../src/assets/project/burrito/packung.png",
+      "../../src/assets/project/burrito/mobile.png",
+      "../../src/assets/project/burrito/mockup.png",
+      "../../src/assets/project/burrito/poster.png",
+      "../../src/assets/project/burrito/poster2.png",
+      "../../src/assets/project/burrito/untersetzer.png",
+      "../../src/assets/project/burrito/kellner.png",
     ],
   },
   {

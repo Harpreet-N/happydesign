@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
 import {Download, ExternalLink, Mail} from "lucide-react";
+const resumePdf = new URL("../assets/project/files/Nehar_Harpreet_CV.pdf", import.meta.url).href;
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
 export function ContactSection() {
@@ -176,7 +177,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <div {...formAnimation.animationProps}>
             <Card className="p-6 bg-white border-2 border-black brutal-shadow-lg hover-lift">
-              <h3 className="font-grotesk font-bold text-black text-2xl mb-6">
+              <h3 className="font-grotesk font-bold text-black text-2xl mb-2">
                 SEND MESSAGE
               </h3>
 
@@ -272,45 +273,10 @@ export function ContactSection() {
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Direct Contact Block */}
-            <div {...contactInfoAnimation.animationProps} className="bg-black text-white p-6 brutal-shadow-lg hover-lift">
-              <h4 className="font-grotesk font-bold text-yellow text-xl mb-6">
-                DIRECT CONTACT
-              </h4>
-
-              <div className="space-y-4">
-                <div>
-                  <p className="font-inter text-xs uppercase tracking-wider text-stone mb-1">
-                    Email
-                  </p>
-                  <p className="font-grotesk font-bold text-white">
-                    harpreetneharyt@gmail.com
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-inter text-xs uppercase tracking-wider text-stone mb-1">
-                    Location
-                  </p>
-                  <p className="font-grotesk font-bold text-white">
-                    Vienna
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-inter text-xs uppercase tracking-wider text-stone mb-1">
-                    Response Time
-                  </p>
-                  <p className="font-grotesk font-bold text-white">
-                    Within 24 Hours
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Social Links */}
             <div {...socialAnimation.animationProps}
-                 className="bg-stone-light border-2 border-black p-6 brutal-shadow hover-lift">
-              <h4 className="font-grotesk font-bold text-black text-xl mb-6">
+                 className="bg-black text-white p-6 brutal-shadow-lg hover-lift">
+              <h4 className="font-grotesk font-bold text-yellow text-xl mb-6">
                 CONNECT ONLINE
               </h4>
 
@@ -322,8 +288,7 @@ export function ContactSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group
-                        bg-white border-2 border-black hover:bg-yellow hover-brutal duration-300"
-
+                        bg-yellow border-2 border-black hover:bg-yellow hover-brutal duration-300 font-grotesk font-bold uppercase"
                     >
                     <span className="text-lg">
                       {social.icon}
@@ -346,11 +311,13 @@ export function ContactSection() {
               <h4 className="font-grotesk font-bold text-black text-xl mb-4">
                 DOWNLOAD CV
               </h4>
-              <button
-                  className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
+              <a
+                  href={resumePdf}
+                  download
+                  className="inline-block bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
                 <Download className="inline mr-2 size-4"/>
                 Get Resume
-              </button>
+              </a>
             </div>
           </div>
         </div>

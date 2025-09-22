@@ -121,22 +121,10 @@ export function ParallaxHero() {
               {/* Tag */}
               <div className="inline-block bg-black text-white px-6 py-2 mb-8 brutal-shadow-sm hover-brutal">
                 <p className="font-inter text-sm uppercase tracking-wider">
-                  Portfolio 2025
+                  HARPREET NEHAR Portfolio
                 </p>
               </div>
 
-              {/* Name */}
-              <div {...nameAnimation.animationProps} className="relative">
-                <h1 className="font-grotesk font-black text-black leading-none mb-6">
-                  HARPREET NEHAR
-                </h1>
-
-                {/* Ghost type */}
-                <div
-                    className="absolute -top-4 -right-8 text-white text-6xl font-grotesk font-black opacity-20 select-none hover-rotate transition-transform duration-1000">
-                  UX
-                </div>
-              </div>
 
               {/* Subtitle */}
               <div {...subtitleAnimation.animationProps}
@@ -163,11 +151,6 @@ export function ParallaxHero() {
                   <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
                   →
                 </span>
-                </button>
-
-                <button
-                    className="bg-white text-black border-2 border-black px-8 py-4 font-grotesk font-bold uppercase tracking-wide hover:bg-stone-light hover-brutal transition-all duration-300">
-                  Download CV
                 </button>
               </div>
             </div>
