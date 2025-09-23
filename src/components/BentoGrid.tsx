@@ -61,7 +61,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
           className="absolute top-10 left-10 w-20 h-20 bg-yellow border-2 border-black rotate-12 transition-transform duration-1000"
           style={{ 
             transform: `rotate(12deg) ${ty(0.08)}`,
-            '--parallax-offset': `${parallaxSlow.offset}px`
+            ['--parallax-offset' as any]: `${parallaxSlow.offset}px`
           }}
           ref={parallaxSlow.elementRef}
         />
@@ -69,7 +69,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
           className="absolute bottom-20 right-20 w-12 h-32 bg-black transition-transform duration-1000"
           style={{ 
             transform: ty(-0.06),
-            '--parallax-offset': `${parallaxMedium.offset}px`
+            ['--parallax-offset' as any]: `${parallaxMedium.offset}px`
           }}
           ref={parallaxMedium.elementRef}
         />
@@ -77,7 +77,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
           className="absolute top-1/2 left-1/4 w-8 h-8 bg-stone-dark border border-black -rotate-45 transition-transform duration-1000"
           style={{ 
             transform: `rotate(-45deg) ${ty(0.04)}`,
-            '--parallax-offset': `${parallaxFast.offset}px`
+            ['--parallax-offset' as any]: `${parallaxFast.offset}px`
           }}
           ref={parallaxFast.elementRef}
         />

@@ -11,13 +11,8 @@ import htmlIcon from "../assets/svg/html.svg";
 import cssIcon from "../assets/svg/css.svg";
 import tsIcon from "../assets/svg/typescript.svg";
 
-interface AboutSectionProps {
-  onNavigate: (page: string) => void;
-}
 
-export function AboutSection({
-  onNavigate,
-}: AboutSectionProps) {
+export function AboutSection() {
   const [scrollY, setScrollY] = useState(0);
 
   // Animation hooks
@@ -136,7 +131,7 @@ export function AboutSection({
           className="absolute top-20 left-20 w-16 h-40 bg-yellow border-2 border-black -rotate-12 transition-transform duration-1000 hover-rotate"
           style={{ 
             transform: `rotate(-12deg) ${ty(0.08)}`,
-            '--parallax-offset': `${parallaxSlow.offset}px`
+            ['--parallax-offset' as any]: `${parallaxSlow.offset}px`
           }}
           ref={parallaxSlow.elementRef}
         />
@@ -144,7 +139,7 @@ export function AboutSection({
           className="absolute bottom-40 right-32 w-24 h-24 bg-stone-dark border-2 border-black transition-transform duration-1000"
           style={{ 
             transform: ty(-0.06),
-            '--parallax-offset': `${parallaxMedium.offset}px`
+            ['--parallax-offset' as any]: `${parallaxMedium.offset}px`
           }}
           ref={parallaxMedium.elementRef}
         />
@@ -160,7 +155,7 @@ export function AboutSection({
           className="absolute bottom-20 left-32 w-28 h-28 halftone-circle-stone transition-transform duration-1000"
           style={{ 
             transform: ty(-0.08),
-            '--parallax-offset': `${parallaxFast.offset}px`
+            ['--parallax-offset' as any]: `${parallaxFast.offset}px`
           }}
           ref={parallaxFast.elementRef}
         />

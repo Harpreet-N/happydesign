@@ -22,7 +22,6 @@ export function ContactSection() {
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
   const formAnimation = useScrollAnimation({ delay: 400, duration: 1000 });
-  const contactInfoAnimation = useScrollAnimation({ delay: 600, duration: 800 });
   const socialAnimation = useScrollAnimation({ delay: 800, duration: 600 });
   const cvAnimation = useScrollAnimation({ delay: 1000, duration: 600 });
   
@@ -103,25 +102,25 @@ export function ContactSection() {
       >
         <div
           className="absolute top-20 right-20 w-24 h-48 bg-stone border-2 border-black rotate-6 transition-transform duration-1000 hover-rotate"
-          style={{ 
+          style={{
             transform: `rotate(6deg) ${ty(0.08)}`,
-            '--parallax-offset': `${parallaxSlow.offset}px`
+            ['--parallax-offset' as any]: `${parallaxSlow.offset}px`,
           }}
           ref={parallaxSlow.elementRef}
         />
         <div
           className="absolute bottom-20 left-20 w-32 h-16 bg-black transition-transform duration-1000"
-          style={{ 
+          style={{
             transform: ty(-0.06),
-            '--parallax-offset': `${parallaxMedium.offset}px`
+            ['--parallax-offset' as any]: `${parallaxMedium.offset}px`,
           }}
           ref={parallaxMedium.elementRef}
         />
         <div
           className="absolute top-1/2 right-1/3 w-12 h-12 bg-white border-2 border-black -rotate-12 transition-transform duration-1000 hover-rotate"
-          style={{ 
+          style={{
             transform: `rotate(-12deg) ${ty(0.05)}`,
-            '--parallax-offset': `${parallaxFast.offset}px`
+            ['--parallax-offset' as any]: `${parallaxFast.offset}px`,
           }}
           ref={parallaxFast.elementRef}
         />

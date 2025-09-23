@@ -326,22 +326,39 @@ export function CaseStudy({}: CaseStudyProps) {
               </h2>
               <div className="flex flex-wrap gap-4">
                 {/* Links */}
-                {project.links && project.links.map((link, index) => (
-                  <a
-                    key={`link-${index}`}
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
-                  >
-                    <ExternalLink className="size-4" />
-                    {link.includes('instagram') ? 'Instagram' : 
-                     link.includes('behance') ? 'Behance' :
-                     link.includes('dribbble') ? 'Dribbble' :
-                     link.includes('github') ? 'GitHub' :
-                     'Visit Site'}
-                  </a>
-                ))}
+                {project.links && project.links.map((link, index) => {
+                  const isLikelyFile = /\.(pdf|zip|rar|doc|docx|png|jpe?g)$/i.test(link) || link.startsWith('/') || link.startsWith('..');
+                  if (isLikelyFile) {
+                    const fileName = link.split('/').pop() || `file-${index + 1}`;
+                    return (
+                      <a
+                        key={`link-file-${index}`}
+                        href={link}
+                        download={fileName}
+                        className="bg-black text-white border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-stone-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
+                      >
+                        <ExternalLink className="size-4" />
+                        Download File
+                      </a>
+                    );
+                  }
+                  return (
+                    <a
+                      key={`link-${index}`}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
+                    >
+                      <ExternalLink className="size-4" />
+                      {link.includes('instagram') ? 'Instagram' : 
+                       link.includes('behance') ? 'Behance' :
+                       link.includes('dribbble') ? 'Dribbble' :
+                       link.includes('github') ? 'GitHub' :
+                       'Visit Site'}
+                    </a>
+                  );
+                })}
                 
                 {/* Files */}
                 {project.files && project.files.map((file, index) => {

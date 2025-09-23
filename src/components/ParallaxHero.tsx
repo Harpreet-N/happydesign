@@ -7,7 +7,7 @@ export function ParallaxHero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Animation hooks
-  const nameAnimation = useScrollAnimation({ delay: 300, duration: 1000 });
+  //const nameAnimation = useScrollAnimation({ delay: 300, duration: 1000 });
   const subtitleAnimation = useScrollAnimation({ delay: 500, duration: 800 });
   const ctaAnimation = useScrollAnimation({ delay: 700, duration: 600 });
   const imageAnimation = useScrollAnimation({ delay: 400, duration: 1200 });
@@ -60,7 +60,7 @@ export function ParallaxHero() {
               className="absolute top-20 right-20 w-32 h-48 bg-stone border-2 border-black rotate-12 transition-transform duration-1000 hover-rotate"
               style={{
                 transform: `rotate(12deg) ${ty(0.1)}`,
-                '--parallax-offset': `${parallaxSlow.offset}px`
+                ['--parallax-offset' as any]: `${parallaxSlow.offset}px`
               }}
               ref={parallaxSlow.elementRef}
           />
@@ -68,7 +68,7 @@ export function ParallaxHero() {
               className="absolute top-40 left-16 w-24 h-24 bg-black transition-transform duration-1000"
               style={{
                 transform: ty(-0.05),
-                '--parallax-offset': `${parallaxMedium.offset}px`
+                ['--parallax-offset' as any]: `${parallaxMedium.offset}px`
               }}
               ref={parallaxMedium.elementRef}
           />
@@ -76,7 +76,7 @@ export function ParallaxHero() {
               className="absolute bottom-20 right-40 w-16 h-32 bg-white border-2 border-black -rotate-6 transition-transform duration-1000 hover-rotate"
               style={{
                 transform: `rotate(-6deg) ${ty(0.15)}`,
-                '--parallax-offset': `${parallaxFast.offset}px`
+                ['--parallax-offset' as any]: `${parallaxFast.offset}px`
               }}
               ref={parallaxFast.elementRef}
           />

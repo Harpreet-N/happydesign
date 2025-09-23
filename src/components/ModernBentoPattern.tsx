@@ -307,7 +307,7 @@ export function ModernBentoPattern() {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            ref={(el) => cardsRef.current[index] = el}
+            ref={(el) => { cardsRef.current[index] = el; }}
             data-index={index}
             className={`
               ${getSizeClasses(card.size)} 

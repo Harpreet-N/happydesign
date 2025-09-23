@@ -8,7 +8,7 @@ import { ContactSection } from './ContactSection';
 type Page = 'home' | 'about' | 'contact';
 
 export function Home() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [, setCurrentPage] = useState<Page>('home');
   const navigate = useNavigate();
 
   // Intersection Observer to track which section is in view
@@ -70,6 +70,7 @@ export function Home() {
     };
   }, []);
 
+  /*
   const handleNavigate = (page: string) => {
     if (page === 'home') {
       setCurrentPage('home');
@@ -91,7 +92,7 @@ export function Home() {
       }
     }
   };
-
+*/
   const handleProjectClick = (slug: string) => {
     navigate(`/project/${slug}`);
   };
@@ -100,7 +101,7 @@ export function Home() {
     <>
       <ParallaxHero />
       <BentoGrid onProjectClick={handleProjectClick} />
-      <AboutSection onNavigate={handleNavigate} />
+      <AboutSection />
       <ContactSection />
     </>
   );
