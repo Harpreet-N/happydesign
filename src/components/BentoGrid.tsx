@@ -170,7 +170,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
                         <ImageWithFallback
                             src={project.cover}
                             alt={project.title}
-                            className="w-[80vw] h-[41vh] group-hover:scale-105 transition-transform duration-500"
+                            className="h-full w-full group-hover:scale-105 transition-transform duration-500"
                         />
                       <div className="absolute top-0 right-0 w-16 h-4 bg-stone border-l-2 border-b-2 border-black hover-rotate transition-transform duration-300" />
                       {isLarge && (

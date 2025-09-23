@@ -222,26 +222,28 @@ export const projects: Project[] = [
     id: "7",
     title: "TailMate",
     slug: "tailmate",
-    tags: ["Developer Tool", "Productivity"],
-    cover: "../../src/assets/project/tailmate/logo.png",
+    tags: ["Branding", "UI/UX Design", "Concept Project"],
+    cover: "../../src/assets/project/tailmate/cover.png",
+    heroImage: "../../src/assets/project/tailmate/hero.png",
     summary:
-      "A Chrome extension that accelerates Tailwind CSS development with intelligent class suggestions and live preview features.",
-    category: "Developer Tools",
-    year: "2025",
+        "A concept project reimagining a modern dog adoption platform with a fresh brand identity, playful illustrations, and a user-friendly website experience.",
+    category: "Concept / Branding",
+    year: "2024",
     overview:
-      "TailMate streamlines the Tailwind CSS development workflow by providing context-aware class suggestions and real-time visual feedback.",
+        "TailMate is a self-initiated project born from my curiosity about the adoption process. While researching, I noticed many adoption websites felt outdated and lacked emotional design. I set out to rebrand and redesign the experience, creating a modern, warm, and approachable platform that better connects people with their future pets.",
     problem:
-      "Developers spend significant time looking up Tailwind classes, making typos, and switching between documentation and code editors.",
+        "Many dog adoption websites struggle with outdated interfaces, inconsistent branding, and a lack of engaging storytelling that truly highlights each pet’s uniqueness.",
     process:
-      "Developer surveys, analysis of common Tailwind usage patterns, prototype testing with 50+ developers, and performance optimization.",
+        "I developed a playful brand identity, designed a stylescape with warm colors and paw-inspired elements, and built mockups for the adoption flow. The process also included creating digital and physical brand assets like stickers, mugs, and merchandise to extend the identity.",
     solution:
-      "An intelligent Chrome extension that provides autocomplete for Tailwind classes, live preview of changes, and integration with popular code editors.",
+        "A modern adoption website concept with an approachable design system, friendly illustrations, and a seamless user flow. The brand identity reinforces warmth, trust, and joy—values central to finding a furry companion.",
     results:
-      "10K+ active users, 4.9 Chrome Web Store rating, featured in CSS-Tricks newsletter, and adopted by several design agencies.",
+        "As a conceptual project, TailMate demonstrates my ability to combine branding and UX/UI into a cohesive digital product. It highlights how thoughtful design can transform a traditionally functional website into an emotionally engaging experience.",
     gallery: [
-        "../../src/assets/project/tailmate/logo.png",
+        "../../src/assets/project/tailmate/logo1.png",
         "../../src/assets/project/tailmate/pattern.png",
         "../../src/assets/project/tailmate/sticker.png",
+        "../../src/assets/project/tailmate/stylescape.png",
     ],
     links: ["https://www.figma.com/make/SbUlpy3ZyslprpDDOYFONI/Dog-Adoption-Mobile-Landing-Page?node-id=0-1&t=3IAkT5HpeFViZrT6-1"]
   },
