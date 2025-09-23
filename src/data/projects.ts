@@ -245,6 +245,6 @@ export const projects: Project[] = [
         "../../src/assets/project/tailmate/sticker.png",
         "../../src/assets/project/tailmate/stylescape.png",
     ],
-    links: ["https://www.figma.com/make/SbUlpy3ZyslprpDDOYFONI/Dog-Adoption-Mobile-Landing-Page?node-id=0-1&t=3IAkT5HpeFViZrT6-1"]
+    links: ["https://sun-foyer-82177953.figma.site/"]
   },
 ];
