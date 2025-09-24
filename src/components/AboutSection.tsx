@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useScrollAnimation, useStaggeredAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
-import figmaIcon from "../assets/svg/figma.svg";
-import photoshopIcon from "../assets/svg/photoshop.svg";
-import illustratorIcon from "../assets/svg/illustrator.svg";
-import premiereProIcon from "../assets/svg/premierpro.svg";
-import angularIcon from "../assets/svg/angular.svg";
-import htmlIcon from "../assets/svg/html.svg";
-import cssIcon from "../assets/svg/css.svg";
-import tsIcon from "../assets/svg/typescript.svg";
+import figmaIcon from "@/assets/svg/figma.svg";
+import photoshopIcon from "@/assets/svg/photoshop.svg";
+import illustratorIcon from "@/assets/svg/illustrator.svg";
+import premiereProIcon from "@/assets/svg/premierpro.svg";
+import angularIcon from "@/assets/svg/angular.svg";
+import htmlIcon from "@/assets/svg/html.svg";
+import cssIcon from "@/assets/svg/css.svg";
+import tsIcon from "@/assets/svg/typescript.svg";
+import happy2Image from "@/assets/img/happy2.jpeg";
 
 
 export function AboutSection() {
@@ -270,7 +271,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-yellow-dark rotate-3 brutal-shadow-lg" />
               <div className="relative bg-marble marble-texture border-2 border-black w-full h-80 overflow-hidden hover-lift">
                 <ImageWithFallback
-                  src="../../src/assets/img/happy2.jpeg"
+                  src={happy2Image}
                   alt="Greek sculpture head - representing creative thinking"
                   className="w-full h-full object-cover opacity-95 transition-transform duration-500 hover:scale-105"
                 />

@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
 import {Download, ExternalLink, Mail} from "lucide-react";
-const resumePdf = new URL("../assets/project/files/Nehar_Harpreet_CV.pdf", import.meta.url).href;
+import resumePdf from "@/assets/project/files/Nehar_Harpreet_CV.pdf";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
 export function ContactSection() {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import happyImage from "@/assets/img/happy.jpg";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 
 export function ParallaxHero() {
@@ -163,7 +164,7 @@ export function ParallaxHero() {
                 <div className="absolute inset-0 bg-yellow-dark rotate-3 brutal-shadow-lg"/>
                 <div className="relative w-80 h-96 border-2 border-black overflow-hidden bg-marble marble-texture">
                   <ImageWithFallback
-                      src="../../src/assets/img/happy.jpg"
+                      src={happyImage}
                       alt="Greek marble bust"
                       className="w-full h-full object-cover object-center scale-110 opacity-90 transition-transform duration-500 hover:scale-115"
                   />

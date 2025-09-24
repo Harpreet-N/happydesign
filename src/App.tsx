@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { BottomNavigation } from './components/BottomNavigation';
 import { Home } from './components/Home';
 import { CaseStudy } from './components/CaseStudy';
@@ -16,7 +16,7 @@ export default function App() {
   // Update currentPage based on current route
   useEffect(() => {
     const path = location.pathname;
-    if (path === '/') {
+    if (path === '/' || path === '/happydesign/') {
       setCurrentPage('home');
     } else if (path.startsWith('/project/')) {
       setCurrentPage('case-study');
@@ -63,6 +63,7 @@ export default function App() {
     <div className="min-h-screen bg-background">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/happydesign/" element={<Home />} />
         <Route 
           path="/project/:slug" 
           element={<CaseStudy />} 
@@ -75,6 +76,8 @@ export default function App() {
           path="/datenschutz" 
           element={<DatenschutzPage onBack={handleBackToHome} />} 
         />
+        {/* Catch-all route for any other paths */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <BottomNavigation 

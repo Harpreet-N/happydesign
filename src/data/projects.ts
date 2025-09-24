@@ -1,3 +1,61 @@
+// Import all project assets
+import diabetesLogo from '@/assets/project/diabetes/logo.svg';
+import diabetesCover from '@/assets/project/diabetes/cover.png';
+import diabetesStylescape from '@/assets/project/diabetes/stylescape.png';
+import diabetesComponent from '@/assets/project/diabetes/component.png';
+import diabetesDesktop1 from '@/assets/project/diabetes/desktop_1.png';
+import diabetesDesktop from '@/assets/project/diabetes/desktop.png';
+import diabetesOldImg from '@/assets/project/diabetes/diabaer/img.png';
+import diabetesOldImg1 from '@/assets/project/diabetes/diabaer/img_1.png';
+import diabetesPdf from '@/assets/project/files/Nehar_Harpreet_Diabetes.pdf';
+
+import caffeeLogo from '@/assets/project/caffee/logo.png';
+import caffeeCover from '@/assets/project/caffee/cover.png';
+import caffeeStyle from '@/assets/project/caffee/style.png';
+import caffeePage from '@/assets/project/caffee/page.png';
+import caffeePage2 from '@/assets/project/caffee/page2.png';
+
+import appDiabetesStart from '@/assets/project/appDiabetes/start.png';
+import appDiabetesFood from '@/assets/project/appDiabetes/food.png';
+import appDiabetesMessen from '@/assets/project/appDiabetes/messen.png';
+import appDiabetesQuiz from '@/assets/project/appDiabetes/quiz.png';
+import appDiabetesOld1 from '@/assets/project/appDiabetes/old/old1.png';
+import appDiabetesOldMemory from '@/assets/project/appDiabetes/old/memorygame.png';
+import appDiabetesOldQuiz from '@/assets/project/appDiabetes/old/quiz.png';
+import appDiabetesOldExplain from '@/assets/project/appDiabetes/old/explain.png';
+
+import xocoatlLogo from '@/assets/project/xocoatl/logo.png';
+import xocoatlHero from '@/assets/project/xocoatl/hero.png';
+import xocoatlStylescape from '@/assets/project/xocoatl/stylescape.png';
+import xocoatlFontSide from '@/assets/project/xocoatl/FontSide.jpg';
+import xocoatlBackSide from '@/assets/project/xocoatl/BackSide.png';
+import xocoatlLanding1 from '@/assets/project/xocoatl/bean_scene_coffee_landingpage.png';
+import xocoatlLanding2 from '@/assets/project/xocoatl/bean_scene_coffee_landingpage1.png';
+
+import agilityLogo from '@/assets/project/agility/logo.svg';
+import agilityCard from '@/assets/project/agility/card.svg';
+import agilityProduct from '@/assets/project/agility/product.png';
+import agilityPoster from '@/assets/project/agility/poster.png';
+import agilityMerch from '@/assets/project/agility/merch.svg';
+
+import burritoCover from '@/assets/project/burrito/cover.png';
+import burritoHero from '@/assets/project/burrito/hero.png';
+import burritoStylescape from '@/assets/project/burrito/stylescape.png';
+import burritoPackung from '@/assets/project/burrito/packung.png';
+import burritoMobile from '@/assets/project/burrito/mobile.png';
+import burritoMockup from '@/assets/project/burrito/mockup.png';
+import burritoPoster from '@/assets/project/burrito/poster.png';
+import burritoPoster2 from '@/assets/project/burrito/poster2.png';
+import burritoUntersetzer from '@/assets/project/burrito/untersetzer.png';
+import burritoKellner from '@/assets/project/burrito/kellner.png';
+
+import tailmateCover from '@/assets/project/tailmate/cover.png';
+import tailmateHero from '@/assets/project/tailmate/hero.png';
+import tailmateLogo1 from '@/assets/project/tailmate/logo1.png';
+import tailmatePattern from '@/assets/project/tailmate/pattern.png';
+import tailmateSticker from '@/assets/project/tailmate/sticker.png';
+import tailmateStylescape from '@/assets/project/tailmate/stylescape.png';
+
 export interface Project {
   id: string;
   title: string;
@@ -20,15 +78,14 @@ export interface Project {
 }
 
 
-
 export const projects: Project[] = [
   {
     id: "1",
     title: "MyDiabetes – Website Redesign",
     slug: "mydiabetes",
     tags: ["UX/UI", "Web Redesign", "Healthcare", "Case Study"],
-    cover: "../../src/assets/project/diabetes/logo.svg",
-    heroImage: "../../src/assets/project/diabetes/cover.png",
+    cover: diabetesLogo,
+    heroImage: diabetesCover,
     summary:
         "A complete redesign of the Diabär association’s website to improve accessibility, structure, and emotional connection for children and families affected by diabetes.",
     category: "UX/UI Design",
@@ -45,18 +102,18 @@ export const projects: Project[] = [
     results:
         "The MyDiabetes redesign delivers a structured, engaging, and inclusive platform tailored to children, families, and medical professionals. The solution increases usability, improves emotional resonance, and ensures that vital information is easy to find. By modernizing the Diabär brand and creating a scalable design system, the project enhances both user trust and organizational credibility. Click the first link in the 'Links and Files' section to see the actual website.",
     gallery: [
-      "../../src/assets/project/diabetes/stylescape.png",
-      "../../src/assets/project/diabetes/component.png",
-      "../../src/assets/project/diabetes/desktop_1.png",
-      "../../src/assets/project/diabetes/desktop.png",
+      diabetesStylescape,
+      diabetesComponent,
+      diabetesDesktop1,
+      diabetesDesktop,
     ],
     problemGallery: [
-      "../../src/assets/project/diabetes/diabaer/img.png",
-      "../../src/assets/project/diabetes/diabaer/img_1.png",
+      diabetesOldImg,
+      diabetesOldImg1,
     ],
     links: [
       "https://diabetesvernetzt.at/",
-      "../../src/assets/project/files/Nehar_Harpreet_Diabetes.pdf",
+      diabetesPdf,
     ],
   },
   {
@@ -70,8 +127,8 @@ export const projects: Project[] = [
       "Responsive",
       "Menu Design",
     ],
-    cover: "../../src/assets/project/caffee/logo.png",
-    heroImage: "../../src/assets/project/caffee/cover.png",
+    cover: caffeeLogo,
+    heroImage: caffeeCover,
     summary:
         "A modern website concept for a historic Trieste coffeehouse, highlighting Viennese café tradition with a multilingual, mobile-first menu and refined brand presentation.",
     category: "Web Design & Branding",
@@ -92,10 +149,10 @@ export const projects: Project[] = [
         "Delivered desktop and mobile mockups demonstrating brand clarity, faster menu scanning on mobile, and a stronger sense of place and heritage. The final layouts highlight events and culture, improve wayfinding to Via Dante Alighieri 14, and establish a scalable base for multilingual rollout.",
 
     gallery: [
-      "../../src/assets/project/caffee/cover.png",
-      "../../src/assets/project/caffee/style.png",
-      "../../src/assets/project/caffee/page.png",
-      "../../src/assets/project/caffee/page2.png",
+      caffeeCover,
+      caffeeStyle,
+      caffeePage,
+      caffeePage2,
     ]
   },
   {
@@ -103,8 +160,8 @@ export const projects: Project[] = [
     title: "MyDiabetes – Mobile Game Redesign",
     slug: "mydiabetes-game",
     tags: ["UX/UI", "Mobile App", "Gamification", "Healthcare"],
-    cover: "../../src/assets/project/diabetes/logo.svg",
-    heroImage: "../../src/assets/project/diabetes/cover.png",
+    cover: diabetesLogo,
+    heroImage: diabetesCover,
     summary:
         "A redesign of the MyDiabetes educational mobile game that helps children learn about diabetes through play, blending gamification and health education with a modern visual identity.",
     category: "Mobile App UX/UI",
@@ -114,10 +171,10 @@ export const projects: Project[] = [
     problem:
         "The existing app had outdated visuals, lacked consistency, and failed to keep children engaged. The user interface was not intuitive, and the overall design did not reflect the educational purpose or emotional tone required for young audiences learning about diabetes.",
     problemGallery: [
-        "../../src/assets/project/appDiabetes/old/old1.png",
-        "../../src/assets/project/appDiabetes/old/memorygame.png",
-        "../../src/assets/project/appDiabetes/old/quiz.png",
-        "../../src/assets/project/appDiabetes/old/explain.png",
+        appDiabetesOld1,
+        appDiabetesOldMemory,
+        appDiabetesOldQuiz,
+        appDiabetesOldExplain,
     ],
     process:
         "The redesign began with an analysis of the existing app, identifying gaps in usability and visual engagement. A stylescape was developed to define a modern, child-friendly aesthetic using playful colors, rounded shapes, and clear iconography. Wireframes and high-fidelity mockups were created to redesign core interactions, including avatar care (feeding, insulin management) and game-like mechanics inspired by pool-style play. The design process emphasized both fun and clarity, ensuring educational content remained central.",
@@ -126,10 +183,10 @@ export const projects: Project[] = [
     results:
         "The redesigned MyDiabetes game app successfully combines education and entertainment, making it easier for children to understand diabetes management in a safe and interactive way. The modernized design increases engagement, improves clarity, and aligns with the broader mission of supporting children and families affected by diabetes.",
     gallery: [
-      "../../src/assets/project/appDiabetes/start.png",
-      "../../src/assets/project/appDiabetes/food.png",
-      "../../src/assets/project/appDiabetes/messen.png",
-      "../../src/assets/project/appDiabetes/quiz.png",
+      appDiabetesStart,
+      appDiabetesFood,
+      appDiabetesMessen,
+      appDiabetesQuiz,
     ],
   },
   {
@@ -144,8 +201,8 @@ export const projects: Project[] = [
       "Identity",
       "Brand Guide"
     ],
-    cover: "../../src/assets/project/xocoatl/logo.png",
-    heroImage: "../../src/assets/project/xocoatl/hero.png",
+    cover: xocoatlLogo,
+    heroImage: xocoatlHero,
     summary: "Branding for Xocoatl: modernizing a traditional Aztec cocoa drink with authenticity, quality, and sustainability in mind.",
     category: "Brand Identity & Packaging",
     year: "2024",
@@ -155,12 +212,12 @@ export const projects: Project[] = [
     solution: "Delivered a full brand identity including a strong wordmark/logo, illustrations, packaging, website/landing page and merchandise designs. Visual style conveys both tradition and modernity using robust typography, earthy palettes, and clean layouts. Brand guide ensures visual consistency and scalability.",
     results: "The identity gives Xocoatl a refined and authentic presence in retail. Packaging and visual materials feel premium, appealing to conscious consumers. The web landing enhances brand narrative. Merchandise extends recognition. The brand guide sets up Xocoatl for future growth and high-quality extensions.",
     gallery: [
-        "../../src/assets/project/xocoatl/logo.png",
-        "../../src/assets/project/xocoatl/stylescape.png",
-        "../../src/assets/project/xocoatl/FontSide.jpg",
-        "../../src/assets/project/xocoatl/BackSide.png",
-        "../../src/assets/project/xocoatl/bean_scene_coffee_landingpage.png",
-        "../../src/assets/project/xocoatl/bean_scene_coffee_landingpage1.png",
+        xocoatlLogo,
+        xocoatlStylescape,
+        xocoatlFontSide,
+        xocoatlBackSide,
+        xocoatlLanding1,
+        xocoatlLanding2,
     ],
   },
   {
@@ -168,8 +225,8 @@ export const projects: Project[] = [
     title: "Agility Plus",
     slug: "agility-plus",
     tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
-    cover: "../../src/assets/project/agility/logo.svg",
-    heroImage: "../../src/assets/project/agility/logo.svg",
+    cover: agilityLogo,
+    heroImage: agilityLogo,
     summary: "Agility Plus is a modular, digital training system that combines physical agility with cognitive challenges through LED-guided exercises and an app-based platform.",
     category: "UX/UI & Product Design",
     year: "2025",
@@ -179,10 +236,10 @@ export const projects: Project[] = [
     solution: "Agility Plus integrates LED-based movement cues with app-controlled training programs and gamified challenges. Its modular design allows quick setup indoors or outdoors, while future sensor integration will enable detailed performance analytics and AI-driven feedback.",
     results: "Early prototypes demonstrated strong user engagement, high motivation, and positive feedback from both athletes and rehabilitation experts. The system improves training efficiency, reduces injury risks, and creates a fun, measurable experience. Agility Plus is set to become a new standard in sports and therapy training.",
     gallery: [
-        "../../src/assets/project/agility/card.svg",
-        "../../src/assets/project/agility/product.png",
-      "../../src/assets/project/agility/poster.png",
-      "../../src/assets/project/agility/merch.svg"
+        agilityCard,
+        agilityProduct,
+        agilityPoster,
+        agilityMerch
     ],
     links: ["https://www.instagram.com/agility.plus/", "https://preview-4ccc8c2f--agility-plus-ignite.lovable.app/?fbclid=PAZXh0bgNhZW0CMTEAAacxjyUuJ47Ak5oaRTnneGoVNjYld6n0-19TlMYUaioZMgB3nOXxbpxlPqqEFg_aem_-Q9QmzZlM6w5h1UlSn0GrQ"],
   },
@@ -191,8 +248,8 @@ export const projects: Project[] = [
     title: "Burrito Casa",
     slug: "burrito-casa",
     tags: ["Branding", "Concept Project", "Food Service"],
-    cover: "../../src/assets/project/burrito/cover.png",
-    heroImage: "../../src/assets/project/burrito/hero.png",
+    cover: burritoCover,
+    heroImage: burritoHero,
     summary:
         "A self-initiated concept project exploring how a modern burrito and taco brand could look and feel across digital and physical touchpoints.",
     category: "Concept / Branding",
@@ -208,14 +265,14 @@ export const projects: Project[] = [
     results:
         "As a concept project, Burrito Casa demonstrates my ability to develop a complete brand system from scratch, combining strategy, identity design, and user experience into one cohesive vision.",
     gallery: [
-      "../../src/assets/project/burrito/stylescape.png",
-      "../../src/assets/project/burrito/packung.png",
-      "../../src/assets/project/burrito/mobile.png",
-      "../../src/assets/project/burrito/mockup.png",
-      "../../src/assets/project/burrito/poster.png",
-      "../../src/assets/project/burrito/poster2.png",
-      "../../src/assets/project/burrito/untersetzer.png",
-      "../../src/assets/project/burrito/kellner.png",
+      burritoStylescape,
+      burritoPackung,
+      burritoMobile,
+      burritoMockup,
+      burritoPoster,
+      burritoPoster2,
+      burritoUntersetzer,
+      burritoKellner,
     ],
   },
   {
@@ -223,8 +280,8 @@ export const projects: Project[] = [
     title: "TailMate",
     slug: "tailmate",
     tags: ["Branding", "UI/UX Design", "Concept Project"],
-    cover: "../../src/assets/project/tailmate/cover.png",
-    heroImage: "../../src/assets/project/tailmate/hero.png",
+    cover: tailmateCover,
+    heroImage: tailmateHero,
     summary:
         "A concept project reimagining a modern dog adoption platform with a fresh brand identity, playful illustrations, and a user-friendly website experience.",
     category: "Concept / Branding",
@@ -240,10 +297,10 @@ export const projects: Project[] = [
     results:
         "As a conceptual project, TailMate demonstrates my ability to combine branding and UX/UI into a cohesive digital product. It highlights how thoughtful design can transform a traditionally functional website into an emotionally engaging experience.",
     gallery: [
-        "../../src/assets/project/tailmate/logo1.png",
-        "../../src/assets/project/tailmate/pattern.png",
-        "../../src/assets/project/tailmate/sticker.png",
-        "../../src/assets/project/tailmate/stylescape.png",
+        tailmateLogo1,
+        tailmatePattern,
+        tailmateSticker,
+        tailmateStylescape,
     ],
     links: ["https://sun-foyer-82177953.figma.site/"]
   },
