@@ -6,6 +6,7 @@ import { Card } from "./ui/card";
 import {Download, ExternalLink, Mail} from "lucide-react";
 import resumePdf from "@/assets/project/files/Nehar_Harpreet_CV.pdf";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
+import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,8 +17,6 @@ export function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-
-  //TODO Add MAil service
 
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
@@ -50,13 +49,14 @@ export function ContactSection() {
     });
   };
 
+  /*
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
     setFormData({ name: "", email: "", message: "" });
   };
-
+*/
   // helper for additive translateY with parallax
   const ty = (mult = 0, extra = 0) =>
     `translateY(${BASE_Y + scrollY * mult + extra}px)`;
@@ -74,6 +74,60 @@ export function ContactSection() {
     },
 
   ];
+
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    emailjs.init({ publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY });
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const service = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+
+      // Owner notification (goes to your inbox)
+      const owner = emailjs.send(
+          service,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID_OWNER,
+          {
+            ...payload,
+            // If your owner template uses {{to_email}}, pass it explicitly:
+            to_email: 'harpreetneharyt@gmail.com',
+          }
+      );
+
+      // Auto-reply (goes to the sender)
+      const auto = emailjs.send(
+          service,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID_AUTO,
+          payload
+      );
+
+      await Promise.allSettled([owner, auto]);
+
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err: any) {
+      console.error("EmailJS error:", err?.text || err);
+      setError(err?.text || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
 
   return (
@@ -259,11 +313,13 @@ export function ContactSection() {
 
                   <Button
                     type="submit"
+                    disabled={loading}
                     className="w-full bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black brutal-shadow-sm hover-brutal transition-all duration-300"
-                  >
+                  > {loading ? "Sending..." : "Send Message"}
                     Send Message
                     <Mail className="ml-2 size-4" />
                   </Button>
+                  {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
                 </form>
               )}
             </Card>
