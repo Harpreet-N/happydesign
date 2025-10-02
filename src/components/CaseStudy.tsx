@@ -429,7 +429,7 @@ export function CaseStudy({}: CaseStudyProps) {
                   onClick={() =>
                     navigate(`/project/${nextProject.slug}`)
                   }
-                  className="text-white hover:text-yellow font-grotesk font-bold p-0 h-auto"
+                  className="text-white hover:bg-yellow font-grotesk font-bold p-0 h-auto"
                 >
                   {nextProject.title}
                   <ArrowRight className="ml-2 size-4" />

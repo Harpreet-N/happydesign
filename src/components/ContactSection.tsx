@@ -316,7 +316,6 @@ export function ContactSection() {
                     disabled={loading}
                     className="w-full bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black brutal-shadow-sm hover-brutal transition-all duration-300"
                   > {loading ? "Sending..." : "Send Message"}
-                    Send Message
                     <Mail className="ml-2 size-4" />
                   </Button>
                   {error && <p className="mt-2 text-sm text-red-600">{error}</p>}

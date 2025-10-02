@@ -148,6 +148,12 @@
   }
 }
 
+@layer base {
+  button:hover {
+    cursor: pointer;
+  }
+}
+
 /**
  * Greek brutalist typography
  */

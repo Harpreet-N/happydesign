@@ -27,9 +27,63 @@ export default function App() {
     }
   }, [location.pathname]);
 
+  // While on the home route, update currentPage based on the section in view
+  useEffect(() => {
+    const path = location.pathname;
+    if (!(path === '/' || path === '/happydesign/')) return;
+
+    const observer = new IntersectionObserver(
+      () => {
+        const heroSection = document.getElementById('hero-section');
+        const aboutSection = document.getElementById('about');
+        const contactSection = document.getElementById('contact');
+
+        if (heroSection && aboutSection && contactSection) {
+          const heroRect = heroSection.getBoundingClientRect();
+          const aboutRect = aboutSection.getBoundingClientRect();
+          const contactRect = contactSection.getBoundingClientRect();
+
+          if (contactRect.top <= window.innerHeight * 0.5 && contactRect.bottom >= 0) {
+            setCurrentPage('contact');
+          } else if (aboutRect.top <= window.innerHeight * 0.5 && aboutRect.bottom >= window.innerHeight * 0.3) {
+            setCurrentPage('about');
+          } else if (heroRect.top <= window.innerHeight * 0.5 && heroRect.bottom >= 0) {
+            if (aboutRect.top > window.innerHeight * 0.5) {
+              setCurrentPage('home');
+            } else {
+              setCurrentPage('about');
+            }
+          } else if (heroRect.bottom > 0) {
+            setCurrentPage('home');
+          }
+        }
+      },
+      {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: '0px 0px 0px 0px',
+      }
+    );
+
+    const heroSection = document.getElementById('hero-section');
+    const aboutSection = document.getElementById('about');
+    const contactSection = document.getElementById('contact');
+
+    if (heroSection) observer.observe(heroSection);
+    if (aboutSection) observer.observe(aboutSection);
+    if (contactSection) observer.observe(contactSection);
+
+    return () => {
+      if (heroSection) observer.unobserve(heroSection);
+      if (aboutSection) observer.unobserve(aboutSection);
+      if (contactSection) observer.unobserve(contactSection);
+    };
+  }, [location.pathname]);
+
   const handleNavigate = (page: string) => {
     if (page === 'home') {
       navigate('/');
+      // Scroll to top of page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (page === 'about') {
       navigate('/');
       // Scroll to about section after navigation
