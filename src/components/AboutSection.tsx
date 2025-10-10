@@ -51,7 +51,7 @@ export function AboutSection() {
     },
     {
       year: "2021 -2023",
-      role: "Bachlor University Technikum",
+      role: "Bachelor University Technikum",
       company: "Computer science",
     },
     {
@@ -74,12 +74,12 @@ export function AboutSection() {
     },
     {
       year: "2021 - 2023",
-      role: "Raiffiesen Software - UX/UI Dual Student",
+      role: "Raiffeisen Software - UX/UI Dual Student",
       company: "Development of websites and user interfaces with Angular. Development of documentation using Storybook",
     },
     {
       year: "2023- current",
-      role: "Raiffiesen Software - UX/UI Designer",
+      role: "Raiffeisen Software - UX/UI Designer",
       company: "Accessible web applications with Angular. UI component catalog for modern frontend solutions. Designing the banking app. Designing new components and web pages",
     },
   ];
