@@ -56,6 +56,15 @@ import tailmatePattern from '@/assets/project/tailmate/pattern.png';
 import tailmateSticker from '@/assets/project/tailmate/sticker.png';
 import tailmateStylescape from '@/assets/project/tailmate/stylescape.png';
 
+
+import profil from '@/assets/project/gassner/Profil.png';
+import statistik from '@/assets/project/gassner/Statistik_Standort.png';
+import app from '@/assets/project/gassner/App.png';
+import group from '@/assets/project/gassner/group.png';
+import logo from '@/assets/project/gassner/Gassner_Logo_1.png';
+import oldGass from '@/assets/project/gassner/old_gass.png';
+import oldGass1 from '@/assets/project/gassner/old_gass2.png';
+
 export interface Project {
   id: string;
   title: string;
@@ -79,6 +88,41 @@ export interface Project {
 
 
 export const projects: Project[] = [
+  {
+    id: "1",
+    title: "Gassner – Mobile App Redesign",
+    slug: "focasma",
+    tags: ["UX/UI", "Mobile Redesign", "Data Visualization", "Industrial Tech"],
+    cover: logo,
+    heroImage: logo,
+    summary:
+        "A modern mobile redesign for Gassner app, focused on improving usability, visual clarity, and data-driven features for industrial measurement and monitoring applications.",
+    category: "Mobile UX/UI Design",
+    year: "2025",
+    overview:
+        "The app is a professional mobile application developed by Gassner Wägen, a company known for precision weighing and industrial measurement solutions. The original app provided basic device connectivity and data readouts but lacked a modern user experience. The redesign aimed to create a clean, efficient, and visually cohesive mobile interface that reflects Gassner’s technological innovation while improving usability for technicians, operators, and clients.",
+    problem:
+        "The previous version of the Gassner app had an outdated interface with limited accessibility and poor visual hierarchy. Users struggled to quickly interpret measurement data, track performance, or navigate through multiple weighing modules. The lack of analytics and customization features reduced its value for modern industrial workflows.",
+    process:
+        "The redesign process began with a usability audit of the existing app, followed by competitor benchmarking in industrial IoT and measurement systems. Wireframes and flowcharts were created to restructure navigation and optimize the data visualization experience. The new design introduced modular dashboards, custom color coding for measurement types, and a clear typography system. Interactive prototypes were tested with users from different technical backgrounds to refine the UX hierarchy and visual feedback patterns.",
+    solution:
+        "The redesigned Gassners app introduces an intuitive, data-centric experience with a modern interface that simplifies complex measurement processes. New features include detailed analytics and statistics, measurement history tracking, device management, and customizable dashboards. The refreshed design system follows Gassner’s brand identity while using updated iconography, contrast ratios, and responsive layouts for both light and dark modes.",
+    results:
+        "The redesign significantly improves clarity, efficiency, and engagement for Focasma users. By integrating modern UX principles and enhanced data visualization, the app now supports technicians and managers in monitoring performance with greater precision and confidence. The new interface strengthens the connection between Gassner’s industrial expertise and digital innovation.",
+    gallery: [
+      profil,
+      statistik,
+      app,
+      group,
+    ],
+    links: [
+      "https://gassner-waagen.at/",
+    ],
+    problemGallery: [
+      oldGass,
+      oldGass1,
+    ],
+  },
   {
     id: "1",
     title: "MyDiabetes – Website Redesign",
