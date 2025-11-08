@@ -38,6 +38,37 @@ export function ContactSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Suppress browser extension errors that try to access undefined 'control' property
+  useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      // Suppress errors from browser extensions trying to access 'control' property
+      if (event.message?.includes("Cannot read properties of undefined (reading 'control')") ||
+          event.filename?.includes("content_script.js")) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    };
+
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      const errorString = String(event.reason || '');
+      // Suppress promise rejections from browser extensions
+      if (errorString.includes("Cannot read properties of undefined (reading 'control')") ||
+          errorString.includes("content_script")) {
+        event.preventDefault();
+        return false;
+      }
+    };
+
+    window.addEventListener('error', handleError, true);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
+
+    return () => {
+      window.removeEventListener('error', handleError, true);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
+    };
+  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement
@@ -253,60 +284,69 @@ export function ContactSection() {
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4"
+                  autoComplete="on"
+                  noValidate
+                  data-form-type="contact"
                 >
                   <div>
                     <label
-                      htmlFor="name"
+                      htmlFor="contact-name"
                       className="block font-inter font-bold text-black mb-2 text-sm"
                     >
                       NAME
                     </label>
                     <Input
-                      id="name"
+                      id="contact-name"
                       name="name"
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
                       required
+                      autoComplete="name"
+                      data-form-field="name"
                       className="border-2 border-black focus:border-black focus:ring-0 bg-stone-light font-inter hover-scale transition-transform duration-200"
                     />
                   </div>
 
                   <div>
                     <label
-                      htmlFor="email"
+                      htmlFor="contact-email"
                       className="block font-inter font-bold text-black mb-2 text-sm"
                     >
                       EMAIL
                     </label>
                     <Input
-                      id="email"
+                      id="contact-email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
                       required
+                      autoComplete="email"
+                      data-form-field="email"
                       className="border-2 border-black focus:border-black focus:ring-0 bg-stone-light font-inter hover-scale transition-transform duration-200"
                     />
                   </div>
 
                   <div>
                     <label
-                      htmlFor="message"
+                      htmlFor="contact-message"
                       className="block font-inter font-bold text-black mb-2 text-sm"
                     >
                       MESSAGE
                     </label>
                     <Textarea
-                      id="message"
+                      id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell me about your project..."
                       rows={5}
                       required
+                      autoComplete="off"
+                      data-form-field="message"
                       className="border-2 border-black focus:border-black focus:ring-0 bg-stone-light font-inter resize-none hover-scale transition-transform duration-200"
                     />
                   </div>

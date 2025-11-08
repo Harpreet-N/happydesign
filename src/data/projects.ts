@@ -89,7 +89,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "1",
+    id: "8",
     title: "Gassner – Mobile App Redesign",
     slug: "focasma",
     tags: ["UX/UI", "Mobile Redesign", "Data Visualization", "Industrial Tech"],
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "1",
+    id: "7",
     title: "MyDiabetes – Website Redesign",
     slug: "mydiabetes",
     tags: ["UX/UI", "Web Redesign", "Healthcare", "Case Study"],
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "2",
+    id: "6",
     title: "Caffé Stella Polare",
     slug: "caffe-stella-polare",
     tags: [
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "3",
+    id: "5",
     title: "MyDiabetes – Mobile Game Redesign",
     slug: "mydiabetes-game",
     tags: ["UX/UI", "Mobile App", "Gamification", "Healthcare"],
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "5",
+    id: "3",
     title: "Agility Plus",
     slug: "agility-plus",
     tags: ["UX/UI", "Branding", "Product Design", "Sports Tech", "Rehabilitation"],
@@ -288,7 +288,7 @@ export const projects: Project[] = [
     links: ["https://www.instagram.com/agility.plus/", "https://preview-4ccc8c2f--agility-plus-ignite.lovable.app/?fbclid=PAZXh0bgNhZW0CMTEAAacxjyUuJ47Ak5oaRTnneGoVNjYld6n0-19TlMYUaioZMgB3nOXxbpxlPqqEFg_aem_-Q9QmzZlM6w5h1UlSn0GrQ"],
   },
   {
-    id: "6",
+    id: "2",
     title: "Burrito Casa",
     slug: "burrito-casa",
     tags: ["Branding", "Concept Project", "Food Service"],
@@ -320,7 +320,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "7",
+    id: "1",
     title: "TailMate",
     slug: "tailmate",
     tags: ["Branding", "UI/UX Design", "Concept Project"],
