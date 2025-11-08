@@ -126,12 +126,25 @@ export function ContactSection() {
     };
 
     try {
+      // Validate environment variables
       const service = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateOwner = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_OWNER;
+      const templateAuto = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_AUTO;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!service || !templateOwner || !publicKey) {
+        const missing = [];
+        if (!service) missing.push('VITE_EMAILJS_SERVICE_ID');
+        if (!templateOwner) missing.push('VITE_EMAILJS_TEMPLATE_ID_OWNER');
+        if (!publicKey) missing.push('VITE_EMAILJS_PUBLIC_KEY');
+        
+        throw new Error(`Missing required environment variables: ${missing.join(', ')}. Please check your .env file.`);
+      }
 
       // Owner notification (goes to your inbox)
-      const owner = emailjs.send(
+      const ownerPromise = emailjs.send(
           service,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID_OWNER,
+          templateOwner,
           {
             ...payload,
             // If your owner template uses {{to_email}}, pass it explicitly:
@@ -139,21 +152,36 @@ export function ContactSection() {
           }
       );
 
-      // Auto-reply (goes to the sender)
-      const auto = emailjs.send(
+      // Auto-reply (goes to the sender) - use templateAuto if available, otherwise use the main template
+      const autoTemplate = templateAuto || import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      if (!autoTemplate) {
+        throw new Error('Missing VITE_EMAILJS_TEMPLATE_ID_AUTO or VITE_EMAILJS_TEMPLATE_ID for auto-reply');
+      }
+      
+      const autoPromise = emailjs.send(
           service,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID_AUTO,
+          autoTemplate,
           payload
       );
 
-      await Promise.allSettled([owner, auto]);
+      const results = await Promise.allSettled([ownerPromise, autoPromise]);
+
+      // Check if any requests failed
+      const failures = results.filter(result => result.status === 'rejected');
+      if (failures.length > 0) {
+        const errorMessages = failures.map((failure: any) => 
+          failure.reason?.text || failure.reason?.message || 'Unknown error'
+        );
+        throw new Error(`Failed to send email: ${errorMessages.join(', ')}`);
+      }
 
       setIsSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (err: any) {
-      console.error("EmailJS error:", err?.text || err);
-      setError(err?.text || "Something went wrong. Please try again.");
+      console.error("EmailJS error:", err);
+      const errorMessage = err?.text || err?.message || err?.toString() || "Something went wrong. Please try again.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
