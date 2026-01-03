@@ -9,11 +9,15 @@ interface BentoGridProps {
 
 export function BentoGrid({ onProjectClick }: BentoGridProps) {
   const [scrollY, setScrollY] = useState(0);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
+  // Show only first 5 projects initially, or all if toggled
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 5);
 
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
   const ctaAnimation = useScrollAnimation({ delay: 300, duration: 600 });
-  const { containerRef, getItemAnimationClass } = useStaggeredAnimation(projects.length, 150);
+  const { containerRef, getItemAnimationClass } = useStaggeredAnimation(displayedProjects.length, 150);
   const parallaxSlow = useParallaxScroll(0.05);
   const parallaxMedium = useParallaxScroll(0.08);
   const parallaxFast = useParallaxScroll(0.12);
@@ -140,7 +144,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
 
         {/* Projects Grid - Brutalist Masonry */}
         <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => {
+          {displayedProjects.map((project, index) => {
             const isLarge = index % 5 === 0;
             const isWide = index % 3 === 0 && !isLarge;
             const isYellow = index % 4 === 0;
@@ -215,6 +219,18 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
             );
           })}
         </div>
+
+        {/* Show All / Hide Projects Button */}
+        {projects.length > 5 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              className="bg-white border-2 border-black px-8 py-4 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black hover-brutal transition-all duration-300 brutal-shadow-sm"
+            >
+              {showAllProjects ? "Hide Projects" : "Show All Projects"}
+            </button>
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div {...ctaAnimation.animationProps} className="mt-20 text-center">

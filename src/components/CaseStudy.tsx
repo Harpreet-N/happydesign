@@ -204,7 +204,7 @@ export function CaseStudy({}: CaseStudyProps) {
             <h2 className="font-grotesk font-bold text-black mb-6">
               OVERVIEW
             </h2>
-            <p className="font-inter text-base text-stone-dark leading-relaxed">
+            <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
               {project.overview}
             </p>
           </div>
@@ -216,7 +216,7 @@ export function CaseStudy({}: CaseStudyProps) {
             <h2 className="font-grotesk font-bold text-black mb-6">
               THE PROBLEM
             </h2>
-            <p className="font-inter text-base text-black leading-relaxed">
+            <p className="font-inter text-base text-black leading-relaxed whitespace-pre-wrap">
               {project.problem}
             </p>
           </div>
@@ -257,7 +257,7 @@ export function CaseStudy({}: CaseStudyProps) {
             <h2 className="font-grotesk font-bold text-black mb-6">
               PROCESS
             </h2>
-            <p className="font-inter text-base text-stone-dark leading-relaxed">
+            <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
               {project.process}
             </p>
           </div>
@@ -299,7 +299,7 @@ export function CaseStudy({}: CaseStudyProps) {
             <h2 className="font-grotesk font-bold text-black mb-6">
               SOLUTION
             </h2>
-            <p className="font-inter text-base text-stone-dark leading-relaxed">
+            <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
               {project.solution}
             </p>
           </div>
@@ -311,7 +311,7 @@ export function CaseStudy({}: CaseStudyProps) {
             <h2 className="font-grotesk font-bold text-yellow mb-6">
               RESULTS
             </h2>
-            <p className="font-inter text-base text-stone leading-relaxed">
+            <p className="font-inter text-base text-stone leading-relaxed whitespace-pre-wrap">
               {project.results}
             </p>
           </div>
@@ -376,6 +376,30 @@ export function CaseStudy({}: CaseStudyProps) {
                     </a>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Video Section */}
+        {project.video && (
+          <section>
+            <div className="bg-white border-2 border-black p-8 brutal-shadow-lg mb-8">
+              <h2 className="font-grotesk font-bold text-black mb-6">
+                VIDEO
+              </h2>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-stone rotate-1 brutal-shadow-lg" />
+              <div className="relative overflow-hidden border-2 border-black">
+                <video
+                  src={project.video}
+                  controls
+                  className="w-full h-auto"
+                  style={{ maxHeight: '80vh' }}
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </section>

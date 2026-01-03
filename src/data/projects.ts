@@ -65,6 +65,24 @@ import logo from '@/assets/project/gassner/Gassner_Logo_1.png';
 import oldGass from '@/assets/project/gassner/old_gass.png';
 import oldGass1 from '@/assets/project/gassner/old_gass2.png';
 
+// Gym/Weight Loss case study imports
+import gymLogo from '@/assets/project/gym/logo.png';
+import gym2 from '@/assets/project/gym/gym_2.png';
+import gym3 from '@/assets/project/gym/gym_3.png';
+import gym4 from '@/assets/project/gym/gym_4.png';
+import gymBad from '@/assets/project/gym/gym_Bad.png';
+import gymBad1 from '@/assets/project/gym/gym_Bad_1.png';
+import gymVideo from '@/assets/project/gym/gym_video.mov';
+
+// Bottle Pirates (Flaschenpiraten) imports
+import flaschenLogo from '@/assets/project/flaschenpiraten/logo_p.svg';
+import flaschenHeroCongratulations from '@/assets/project/flaschenpiraten/hero_congratulations.png';
+import flaschenHeroExchange from '@/assets/project/flaschenpiraten/hero_exchange.png';
+import flaschenPassport from '@/assets/project/flaschenpiraten/passport.png';
+import flaschenOld1 from '@/assets/project/flaschenpiraten/old_1.jpg';
+import flaschenOld2 from '@/assets/project/flaschenpiraten/old_2.png';
+import flaschenVideo from '@/assets/project/flaschenpiraten/flaschen-piraten.mp4';
+
 export interface Project {
   id: string;
   title: string;
@@ -84,10 +102,76 @@ export interface Project {
   gallery: string[];
   links?: string[];
   files?: string[];
+  video?: string;
 }
 
 
 export const projects: Project[] = [
+  {
+    id: "10",
+    title: "Bottle Pirates",
+    slug: "bottle-pirates",
+    tags: ["Mobile App", "UX/UI Design", "Marketplace", "Community", "Social Commerce"],
+    cover: flaschenLogo,
+    heroImage: flaschenLogo,
+    summary:
+        "Bottle Pirates (Flaschenpiraten) is a social community marketplace for wine—built for collectors, enthusiasts, and sellers to discover bottles, connect with other members, and trade, buy, or sell wines in a playful 'treasure hunt' experience. The product blends marketplace mechanics with community interaction to make wine commerce feel less transactional and more like a shared hobby.",
+    category: "Mobile App • UX/UI Design • Marketplace",
+    year: "2025",
+    overview:
+        "Bottle Pirates (Flaschenpiraten) is a social community marketplace for wine—built for collectors, enthusiasts, and sellers to discover bottles, connect with other members, and trade, buy, or sell wines in a playful 'treasure hunt' experience.\n\nThe product blends marketplace mechanics with community interaction to make wine commerce feel less transactional and more like a shared hobby. The platform creates an engaging environment where wine trading becomes a social activity, combining the excitement of discovery with the trust needed for high-value transactions.",
+    problem:
+        "Wine trading is high-trust and detail-heavy: listings need clear provenance-style info, buyers want confidence, and the experience can quickly become cluttered.\n\nThe challenge was to make selling and discovering bottles feel simple, social, and fun—without losing the seriousness needed for high-value items. Users needed a way to navigate complex product information while maintaining engagement and building trust within a community context.",
+    process:
+        "The design process focused on creating a community-first marketplace experience. We analyzed existing wine trading platforms, identified pain points in traditional marketplaces, and developed a solution that prioritizes social interaction alongside commerce.\n\nKey considerations included:\n\n• Balancing simplicity with detailed product information\n• Creating trust-building mechanisms for high-value transactions\n• Designing intuitive listing creation flows\n• Building community engagement features\n• Ensuring mobile-first experience for on-the-go browsing",
+    solution:
+        "We designed a community-first marketplace flow: create listings quickly, browse and filter easily, and move from discovery to conversation with minimal friction.\n\nThe UX emphasizes strong visual hierarchy, clear listing details, and lightweight community mechanics that keep users engaged beyond a single transaction.\n\nKey features implemented:\n\n1. Buy, sell & exchange wine in a social marketplace\n2. Auction-style mechanics for high-interest listings\n3. Community profiles and interactions around listings\n4. Clean listing detail pages for trust & clarity\n5. Mobile-first browse, search & filters for discovery",
+    results:
+        "Bottle Pirates successfully creates a unique marketplace experience that combines commerce with community. The platform makes wine trading more accessible and engaging, transforming what is typically a transactional experience into a social hobby.\n\nBy prioritizing community interaction and trust-building, the app creates a sustainable ecosystem where users return not just to buy or sell, but to connect with fellow wine enthusiasts and discover new bottles through social discovery.",
+    gallery: [
+      flaschenHeroCongratulations,
+      flaschenHeroExchange,
+      flaschenPassport,
+    ],
+    problemGallery: [
+      flaschenOld1,
+      flaschenOld2,
+    ],
+    video: flaschenVideo,
+  },
+  {
+    id: "9",
+    title: "Weight Loss Program for Online Fitness Coaches",
+    slug: "weight-loss-conversion",
+    tags: ["UX/UI", "Conversion Optimization", "Case Study", "Landing Page", "UX Research"],
+    cover: gymLogo,
+    heroImage: gymLogo,
+    summary:
+        "A conceptual UX/UI case study exploring how strategic design decisions can reduce drop-off between social media engagement and paid program enrollment for online fitness coaches, focusing on trust, clarity, and decision support.",
+    category: "UX/UI Design & Conversion",
+    year: "2025",
+    overview:
+        "This case study explores how UX decisions can reduce drop-off between social media engagement and paid program enrollment for online fitness coaches.\n\nMany online fitness coaches build strong audiences on platforms like Instagram or TikTok. Their content performs well, engagement is high — yet conversion into paid programs remains low.\n\nThe typical user journey shows users discovering the coach through social media, clicking the link in bio, scrolling the website, hesitating, and leaving without committing. The issue is not motivation or interest — it's trust and clarity at the moment of decision.\n\nFor a 12-week weight loss transformation, users are not just buying workouts — they are committing time, money, and emotional energy. This project focuses on conversion, trust, and decision clarity for a marketing website/landing page platform.",
+    problem:
+        "Users trust the coach's content, but not the product experience enough to commit. Common hesitation points include: 'Is this program really for me?', 'What if I fail again?', 'Is this worth the commitment?', and 'What happens after I sign up?'\n\nWhen these questions are unanswered, users delay or abandon the purchase. The biggest drop-off happens between social content → landing page, landing page → CTA, and CTA → commitment. Instead of confidence increasing, uncertainty grows.\n\nThe issue is not visual quality, but cognitive friction. Key UX problems identified include:\n\n• Generic messaging that lacks specificity\n• No clear framing of commitment level\n• Emotional content leads into a rational decision without guidance\n• Testimonials are inspirational but not concrete\n• Fear of failure is not addressed\n• Unclear next steps after clicking the CTA\n\nThe product experience does not sufficiently support the user through a high-stakes decision.",
+    process:
+        "The redesign focuses on four primary goals:\n\n• Build trust before asking for commitment\n• Reduce uncertainty at critical decision points\n• Frame the program as structured and intentional\n• Guide users step-by-step instead of overwhelming them\n\nBefore designing solutions, the following principles guided all decisions:\n\n• Specificity builds trust\n• Structure reduces fear\n• Fewer decisions increase conversion\n• Emotional reassurance is as important as information\n• Commitment should feel guided, not risky\n\nThe process involved analyzing the conversion funnel, identifying friction points, researching user psychology around high-commitment purchases, and developing a solution framework that addresses both rational and emotional decision-making factors.",
+    solution:
+        "The solution does not add complexity — it removes uncertainty. Five key improvements were implemented:\n\n1. Clear Commitment Framing\n   The program is positioned clearly as a 12-week guided transformation, setting expectations early and filtering unserious users.\n\n2. Outcome-Oriented CTAs\n   Generic CTAs were replaced with action-driven language that reflects commitment and intent.\n\n3. Reduced Fear at the Moment of Action\n   Microcopy below CTAs explains what happens next (e.g. application or clarity call), reducing anxiety around clicking.\n\n4. Stronger Social Proof\n   Testimonials were refined to include timeframe, context, and outcome, shifting social proof from inspiration to credibility.\n\n5. Emotional Objection Handling\n   Key fears (loss of motivation and past failure) are addressed directly in the FAQ, increasing psychological safety.\n\nBefore:\n• Users must convince themselves\n• Commitment feels risky\n• Unclear next steps\n• Generic program perception\n\nAfter:\n• Users are guided through decisions\n• Expectations are clear\n• Commitment feels structured and supported\n• Trust increases before pricing or application",
+    results:
+        "While this is a conceptual case study, the expected impact includes:\n\n• Reduced hesitation at CTA\n• Higher perceived legitimacy\n• Better-qualified leads\n• Stronger alignment between content and product\n• Improved conversion from interest to action\n\nKey learnings demonstrate that:\n\n• Conversion problems are often trust problems\n• Authenticity comes from clarity, not hype\n• Addressing fear increases commitment\n• UX directly influences revenue outcomes\n\nThis case study demonstrates my approach to commercial UX problems: I design digital experiences that reduce cognitive load, build trust, and guide users from attention to action — especially for high-commitment digital products.\n\nThis is not a branding exercise. It is a conversion-focused UX case study designed to show how thoughtful structure and clarity can turn attention into action.",
+    gallery: [
+      gymLogo,
+      gym2,
+      gym3,
+      gym4,
+    ],
+    problemGallery: [
+      gymBad,
+      gymBad1,
+    ],
+    video: gymVideo,
+  },
   {
     id: "8",
     title: "Gassner – Mobile App Redesign",
