@@ -52,10 +52,18 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
         <div className="container mx-auto px-8 md:px-16 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white font-inter text-sm">
-              © 2025 Harpreet Singh Nehar. All rights reserved.
+              © 2025 Harpreet. All rights reserved.
             </div>
             
-            <div className="flex items-center space-x-6">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              <a
+                href="https://wa.me/4369918211764"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone hover:text-yellow font-inter text-sm transition-colors duration-300"
+              >
+                Chat on WhatsApp
+              </a>
               <button
                 onClick={() => onNavigate('impressum')}
                 className="text-stone hover:text-yellow font-inter text-sm transition-colors duration-300"

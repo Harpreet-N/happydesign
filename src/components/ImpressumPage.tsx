@@ -48,7 +48,7 @@ export function ImpressumPage({ onBack }: ImpressumPageProps) {
                 <h3 className="font-grotesk font-bold text-black text-lg mb-2">
                   Website Owner
                 </h3>
-                <p>Harpreet Singh Nehar</p>
+                <p>Harpreet</p>
                 <p>UX/UI & Brand Designer</p>
               </div>
 
@@ -105,7 +105,7 @@ export function ImpressumPage({ onBack }: ImpressumPageProps) {
             
             <div className="space-y-4 font-inter text-black">
               <p>
-                © 2025 Harpreet Singh Nehar. All rights reserved.
+                © 2025 Harpreet. All rights reserved.
               </p>
               
               <p>

@@ -3,8 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card } from "./ui/card";
-import {Download, ExternalLink, Mail} from "lucide-react";
-import resumePdf from "@/assets/project/files/Nehar_Harpreet_CV.pdf";
+import { ExternalLink, Mail, MessageCircle } from "lucide-react";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 import emailjs from "@emailjs/browser";
 
@@ -427,18 +426,19 @@ export function ContactSection() {
 
             </div>
 
-            {/* Download CV */}
+            {/* Chat on WhatsApp */}
             <div {...cvAnimation.animationProps}
                  className="bg-white border-2 border-black p-6 brutal-shadow text-center hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-4">
-                DOWNLOAD CV
+                CHAT ON WHATSAPP
               </h4>
               <a
-                  href={resumePdf}
-                  download
+                  href="https://wa.me/4369918211764"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
-                <Download className="inline mr-2 size-4"/>
-                Get Resume
+                <MessageCircle className="inline mr-2 size-4 align-text-bottom"/>
+                Chat on WhatsApp
               </a>
             </div>
           </div>
