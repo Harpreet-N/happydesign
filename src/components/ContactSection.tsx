@@ -6,8 +6,10 @@ import { Card } from "./ui/card";
 import { ExternalLink, Mail, MessageCircle } from "lucide-react";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "../context/LanguageContext";
 
 export function ContactSection() {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -267,19 +269,19 @@ export function ContactSection() {
         <div {...headerAnimation.animationProps} className="text-center mb-0">
           <div className="inline-block bg-black text-white px-6 py-2 mb-6 brutal-shadow-sm hover-brutal">
             <p className="font-inter text-sm uppercase tracking-wider">
-              Let's Connect
+              {language === "de" ? "Lass uns sprechen" : "Let's Connect"}
             </p>
           </div>
 
           <h2 className="font-grotesk font-black text-black mb-8">
-            Ready to Create Something Amazing?
+            {language === "de" ? "Bereit, etwas Großartiges zu schaffen?" : "Ready to Create Something Amazing?"}
           </h2>
 
           <div className="bg-white border-2 border-black p-6 brutal-shadow max-w-2xl mx-auto mt-6 mb-6 hover-lift">
             <p className="font-inter text-stone-dark text-lg leading-relaxed">
-              Whether you're looking to launch a new product,
-              rebrand your company, or just want to chat about
-              design, I'd love to hear from you.
+              {language === "de"
+                ? "Ob neues Produkt, Rebranding oder einfach ein Austausch über Design - ich freue mich auf deine Nachricht."
+                : "Whether you're looking to launch a new product, rebrand your company, or just want to chat about design, I'd love to hear from you."}
             </p>
           </div>
         </div>
@@ -289,7 +291,7 @@ export function ContactSection() {
           <div {...formAnimation.animationProps}>
             <Card className="p-6 bg-white border-2 border-black brutal-shadow-lg hover-lift">
               <h3 className="font-grotesk font-bold text-black text-2xl mb-2">
-                SEND MESSAGE
+                {language === "de" ? "NACHRICHT SENDEN" : "SEND MESSAGE"}
               </h3>
 
               {isSubmitted ? (
@@ -300,11 +302,12 @@ export function ContactSection() {
                     </span>
                   </div>
                   <h4 className="font-grotesk font-bold text-black mb-2">
-                    MESSAGE SENT!
+                    {language === "de" ? "NACHRICHT GESENDET!" : "MESSAGE SENT!"}
                   </h4>
                   <p className="font-inter text-stone-dark">
-                    Thanks for reaching out. I'll get back to you
-                    within 24 hours.
+                    {language === "de"
+                      ? "Danke für deine Nachricht. Ich melde mich innerhalb von 24 Stunden."
+                      : "Thanks for reaching out. I'll get back to you within 24 hours."}
                   </p>
                 </div>
               ) : (
@@ -328,7 +331,7 @@ export function ContactSection() {
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Your name"
+                      placeholder={language === "de" ? "Dein Name" : "Your name"}
                       required
                       autoComplete="name"
                       data-form-field="name"
@@ -349,7 +352,7 @@ export function ContactSection() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="your@email.com"
+                      placeholder={language === "de" ? "deine@email.com" : "your@email.com"}
                       required
                       autoComplete="email"
                       data-form-field="email"
@@ -369,7 +372,7 @@ export function ContactSection() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project..."
+                      placeholder={language === "de" ? "Erzähl mir von deinem Projekt..." : "Tell me about your project..."}
                       rows={5}
                       required
                       autoComplete="off"
@@ -382,7 +385,9 @@ export function ContactSection() {
                     type="submit"
                     disabled={loading}
                     className="w-full bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black brutal-shadow-sm hover-brutal transition-all duration-300"
-                  > {loading ? "Sending..." : "Send Message"}
+                  > {loading
+                      ? (language === "de" ? "Wird gesendet..." : "Sending...")
+                      : (language === "de" ? "Nachricht senden" : "Send Message")}
                     <Mail className="ml-2 size-4" />
                   </Button>
                   {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
@@ -398,7 +403,7 @@ export function ContactSection() {
             <div {...socialAnimation.animationProps}
                  className="bg-black text-white p-6 brutal-shadow-lg hover-lift">
               <h4 className="font-grotesk font-bold text-yellow text-xl mb-6">
-                CONNECT ONLINE
+                {language === "de" ? "ONLINE VERBINDEN" : "CONNECT ONLINE"}
               </h4>
 
               <div className="grid grid-cols-2 gap-4">
@@ -430,7 +435,7 @@ export function ContactSection() {
             <div {...cvAnimation.animationProps}
                  className="bg-white border-2 border-black p-6 brutal-shadow text-center hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-4">
-                CHAT ON WHATSAPP
+                {language === "de" ? "CHAT AUF WHATSAPP" : "CHAT ON WHATSAPP"}
               </h4>
               <a
                   href="https://wa.me/4369918211764"
@@ -438,7 +443,7 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   className="inline-block bg-yellow text-black border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark brutal-shadow-sm hover-brutal transition-all duration-300">
                 <MessageCircle className="inline mr-2 size-4 align-text-bottom"/>
-                Chat on WhatsApp
+                {language === "de" ? "Auf WhatsApp schreiben" : "Chat on WhatsApp"}
               </a>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface BottomNavigationProps {
   currentPage: string;
@@ -7,6 +8,7 @@ interface BottomNavigationProps {
 
 export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 1000);
@@ -14,9 +16,9 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'WORK' },
-    { id: 'about', label: 'ABOUT' },
-    { id: 'contact', label: 'CONTACT' }
+    { id: 'home', label: language === 'de' ? 'ARBEITEN' : 'WORK' },
+    { id: 'about', label: language === 'de' ? 'ÜBER MICH' : 'ABOUT' },
+    { id: 'contact', label: language === 'de' ? 'KONTAKT' : 'CONTACT' }
   ];
 
   return (
@@ -52,7 +54,7 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
         <div className="container mx-auto px-8 md:px-16 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white font-inter text-sm">
-              © 2025 Harpreet. All rights reserved.
+              {language === 'de' ? '© 2025 Harpreet. Alle Rechte vorbehalten.' : '© 2025 Harpreet. All rights reserved.'}
             </div>
             
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
@@ -62,7 +64,7 @@ export function BottomNavigation({ currentPage, onNavigate }: BottomNavigationPr
                 rel="noopener noreferrer"
                 className="text-stone hover:text-yellow font-inter text-sm transition-colors duration-300"
               >
-                Chat on WhatsApp
+                {language === 'de' ? 'Auf WhatsApp schreiben' : 'Chat on WhatsApp'}
               </a>
               <button
                 onClick={() => onNavigate('impressum')}

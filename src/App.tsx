@@ -5,13 +5,15 @@ import { Home } from './components/Home';
 import { CaseStudy } from './components/CaseStudy';
 import { ImpressumPage } from './components/ImpressumPage';
 import { DatenschutzPage } from './components/DatenschutzPage';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 type Page = 'home' | 'about' | 'contact' | 'case-study' | 'impressum' | 'datenschutz';
 
-export default function App() {
+function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const navigate = useNavigate();
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
 
   // Update currentPage based on current route
   useEffect(() => {
@@ -115,6 +117,26 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="fixed top-6 right-6 z-[60]">
+        <div className="flex items-center bg-black border-2 border-black brutal-shadow-sm">
+          <button
+            onClick={() => setLanguage('de')}
+            className={`px-4 py-2 font-grotesk font-bold text-xs uppercase tracking-wide transition-all duration-300 ${
+              language === 'de' ? 'bg-yellow text-black' : 'bg-black text-white hover:bg-yellow hover:text-black'
+            }`}
+          >
+            DE
+          </button>
+          <button
+            onClick={() => setLanguage('en')}
+            className={`px-4 py-2 font-grotesk font-bold text-xs uppercase tracking-wide border-l-2 border-black transition-all duration-300 ${
+              language === 'en' ? 'bg-yellow text-black' : 'bg-black text-white hover:bg-yellow hover:text-black'
+            }`}
+          >
+            EN
+          </button>
+        </div>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/happydesign/" element={<Home />} />
@@ -139,5 +161,13 @@ export default function App() {
         onNavigate={handleNavigate} 
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }

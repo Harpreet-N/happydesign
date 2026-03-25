@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {type Project, projects } from "../data/projects";
+import { localizeProject, type Project, projects } from "../data/projects";
 import { Button } from "./ui/button";
 import {
   ArrowLeft,
@@ -8,6 +8,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../context/LanguageContext";
 
 interface CaseStudyProps {}
 
@@ -17,6 +18,7 @@ export function CaseStudy({}: CaseStudyProps) {
   const [project, setProject] = useState<Project | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const { language } = useLanguage();
 
   // Single source of truth for vertical start offset
   const BASE_Y = 40; // keep consistent with other sections
@@ -48,14 +50,14 @@ export function CaseStudy({}: CaseStudyProps) {
         <div className="text-center">
           <div className="bg-white border-2 border-black p-8 brutal-shadow-lg">
             <h1 className="font-grotesk text-black mb-4">
-              Project Not Found
+              {language === "de" ? "Projekt nicht gefunden" : "Project Not Found"}
             </h1>
             <Button
               onClick={() => navigate('/')}
               className="bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black transition-all duration-300 brutal-shadow-sm"
             >
               <ArrowLeft className="mr-2 size-4" />
-              Back to Work
+              {language === "de" ? "Zurück zu Arbeiten" : "Back to Work"}
             </Button>
           </div>
         </div>
@@ -66,12 +68,15 @@ export function CaseStudy({}: CaseStudyProps) {
   const currentIndex = projects.findIndex(
     (p) => p.slug === slug,
   );
-  const prevProject =
+  const prevProjectRaw =
     currentIndex > 0 ? projects[currentIndex - 1] : null;
-  const nextProject =
+  const nextProjectRaw =
     currentIndex < projects.length - 1
       ? projects[currentIndex + 1]
       : null;
+  const localizedProject = localizeProject(project, language);
+  const prevProject = prevProjectRaw ? localizeProject(prevProjectRaw, language) : null;
+  const nextProject = nextProjectRaw ? localizeProject(nextProjectRaw, language) : null;
 
   return (
     <article
@@ -131,13 +136,13 @@ export function CaseStudy({}: CaseStudyProps) {
           className="mb-8 -ml-4 bg-black text-white border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black transition-all duration-300 brutal-shadow-sm"
         >
           <ArrowLeft className="mr-2 size-4" />
-          Back to Work
+          {language === "de" ? "Zurück zu Arbeiten" : "Back to Work"}
         </Button>
 
         <div className="space-y-8">
           {/* Tags */}
           <div className="flex flex-wrap gap-3">
-            {project.tags.map((tag) => (
+            {localizedProject.tags.map((tag) => (
               <div
                 key={tag}
                 className="bg-stone-light border-2 border-black px-4 py-2 brutal-shadow-sm"
@@ -152,25 +157,25 @@ export function CaseStudy({}: CaseStudyProps) {
           {/* Title Block */}
           <div className="bg-yellow border-2 border-black p-8 brutal-shadow-lg marble-texture max-w-4xl">
             <h1 className="font-grotesk font-black text-black mb-4">
-              {project.title}
+              {localizedProject.title}
             </h1>
 
             <p className="font-inter text-lg text-black leading-relaxed mb-6">
-              {project.summary}
+              {localizedProject.summary}
             </p>
 
             <div className="flex items-center gap-8">
               <div className="bg-black text-white px-4 py-2">
                 <span className="font-inter text-xs uppercase tracking-wider">
-                  Category
+                  {language === "de" ? "Kategorie" : "Category"}
                 </span>
                 <div className="font-grotesk font-bold text-yellow">
-                  {project.category}
+                  {localizedProject.category}
                 </div>
               </div>
               <div className="bg-black text-white px-4 py-2">
                 <span className="font-inter text-xs uppercase tracking-wider">
-                  Year
+                  {language === "de" ? "Jahr" : "Year"}
                 </span>
                 <div className="font-grotesk font-bold text-yellow">
                   {project.year}
@@ -187,8 +192,8 @@ export function CaseStudy({}: CaseStudyProps) {
           <div className="absolute inset-0 bg-stone rotate-1 brutal-shadow-lg" />
           <div className="relative overflow-hidden border-2 border-black">
             <ImageWithFallback
-              src={project.heroImage}
-              alt={project.title}
+              src={localizedProject.heroImage}
+              alt={localizedProject.title}
               className="w-[80vw] h-[41vh] group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute bottom-0 right-0 w-24 h-32 bg-yellow border-l-2 border-t-2 border-black" />
@@ -202,10 +207,10 @@ export function CaseStudy({}: CaseStudyProps) {
         <section>
           <div className="bg-white border-2 border-black p-8 brutal-shadow-lg">
             <h2 className="font-grotesk font-bold text-black mb-6">
-              OVERVIEW
+              {language === "de" ? "ÜBERBLICK" : "OVERVIEW"}
             </h2>
             <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
-              {project.overview}
+              {localizedProject.overview}
             </p>
           </div>
         </section>
@@ -214,31 +219,31 @@ export function CaseStudy({}: CaseStudyProps) {
         <section>
           <div className="bg-yellow border-2 border-black p-8 brutal-shadow-lg marble-texture">
             <h2 className="font-grotesk font-bold text-black mb-6">
-              THE PROBLEM
+              {language === "de" ? "DAS PROBLEM" : "THE PROBLEM"}
             </h2>
             <p className="font-inter text-base text-black leading-relaxed whitespace-pre-wrap">
-              {project.problem}
+              {localizedProject.problem}
             </p>
           </div>
         </section>
 
         {/* Gallery PROBLEM */}
-        {project.problemGallery && project.problemGallery.length > 1 && (
+        {localizedProject.problemGallery && localizedProject.problemGallery.length > 1 && (
             <section>
               <div className="bg-white border-2 border-black p-6 mb-8 brutal-shadow">
                 <h2 className="font-grotesk font-bold text-black mb-6">
-                  OLD DESIGN GALLERY
+                  {language === "de" ? "GALERIE ALTES DESIGN" : "OLD DESIGN GALLERY"}
                 </h2>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                {project.problemGallery.map((image, index) => (
+                {localizedProject.problemGallery.map((image, index) => (
                     <div key={index} className="relative">
                       <div className="bg-yellow-dark brutal-shadow-lg">
                         <div className="overflow-hidden border-2 border-black">
                           <ImageWithFallback
                               src={image}
-                              alt={`${project.title} gallery image ${index + 1}`}
+                              alt={`${localizedProject.title} gallery image ${index + 1}`}
                               className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                           />
                         </div>
@@ -255,34 +260,36 @@ export function CaseStudy({}: CaseStudyProps) {
         <section>
           <div className="bg-stone-light border-2 border-black p-8 brutal-shadow-lg">
             <h2 className="font-grotesk font-bold text-black mb-6">
-              PROCESS
+              {language === "de" ? "PROZESS" : "PROCESS"}
             </h2>
             <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
-              {project.process}
+              {localizedProject.process}
             </p>
           </div>
         </section>
 
         {/* Gallery */}
-        {project.gallery.length > 1 && (
+        {localizedProject.gallery.length > 1 && (
           <section>
             <div className="bg-white border-2 border-black p-6 mb-8 brutal-shadow">
               <h2 className="font-grotesk font-bold text-black mb-6">
-                PROJECT GALLERY
+                {language === "de" ? "PROJEKTGALERIE" : "PROJECT GALLERY"}
               </h2>
               <p className="font-inter text-base text-black leading-relaxed">
-                The project gallery offers a comprehensive view of the design process, including the brand style, mockups, logo development, landing page, and additional visual assets that illustrate the project outcome.
+                {language === "de"
+                  ? "Die Projektgalerie zeigt den gesamten Designprozess - von Markenstil und Mockups bis zu Logo, Landingpage und weiteren visuellen Ergebnissen."
+                  : "The project gallery offers a comprehensive view of the design process, including the brand style, mockups, logo development, landing page, and additional visual assets that illustrate the project outcome."}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {project.gallery.map((image, index) => (
+              {localizedProject.gallery.map((image, index) => (
                   <div key={index} className="relative">
                   <div className="bg-yellow-dark brutal-shadow-lg">
                     <div className="overflow-hidden border-2 border-black">
                       <ImageWithFallback
                         src={image}
-                        alt={`${project.title} gallery image ${index + 1}`}
+                        alt={`${localizedProject.title} gallery image ${index + 1}`}
                         className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -297,10 +304,10 @@ export function CaseStudy({}: CaseStudyProps) {
         <section>
           <div className="bg-white border-2 border-black p-8 brutal-shadow-lg">
             <h2 className="font-grotesk font-bold text-black mb-6">
-              SOLUTION
+              {language === "de" ? "LÖSUNG" : "SOLUTION"}
             </h2>
             <p className="font-inter text-base text-stone-dark leading-relaxed whitespace-pre-wrap">
-              {project.solution}
+              {localizedProject.solution}
             </p>
           </div>
         </section>
@@ -309,24 +316,24 @@ export function CaseStudy({}: CaseStudyProps) {
         <section>
           <div className="bg-black text-white p-8 brutal-shadow-lg">
             <h2 className="font-grotesk font-bold text-yellow mb-6">
-              RESULTS
+              {language === "de" ? "ERGEBNISSE" : "RESULTS"}
             </h2>
             <p className="font-inter text-base text-stone leading-relaxed whitespace-pre-wrap">
-              {project.results}
+              {localizedProject.results}
             </p>
           </div>
         </section>
 
         {/* Links & Files */}
-        {((project.links && project.links.length > 0) || (project.files && project.files.length > 0)) && (
+        {((localizedProject.links && localizedProject.links.length > 0) || (localizedProject.files && localizedProject.files.length > 0)) && (
           <section>
             <div className="bg-stone-light border-2 border-black p-8 brutal-shadow-lg">
               <h2 className="font-grotesk font-bold text-black mb-6">
-                LINKS & FILES
+                {language === "de" ? "LINKS & DATEIEN" : "LINKS & FILES"}
               </h2>
               <div className="flex flex-wrap gap-4">
                 {/* Links */}
-                {project.links && project.links.map((link, index) => {
+                {localizedProject.links && localizedProject.links.map((link, index) => {
                   const isLikelyFile = /\.(pdf|zip|rar|doc|docx|png|jpe?g)$/i.test(link) || link.startsWith('/') || link.startsWith('..');
                   if (isLikelyFile) {
                     const fileName = link.split('/').pop() || `file-${index + 1}`;
@@ -338,7 +345,7 @@ export function CaseStudy({}: CaseStudyProps) {
                         className="bg-black text-white border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-stone-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
                       >
                         <ExternalLink className="size-4" />
-                        Download File
+                        {language === "de" ? "Datei herunterladen" : "Download File"}
                       </a>
                     );
                   }
@@ -355,13 +362,13 @@ export function CaseStudy({}: CaseStudyProps) {
                        link.includes('behance') ? 'Behance' :
                        link.includes('dribbble') ? 'Dribbble' :
                        link.includes('github') ? 'GitHub' :
-                       'Visit Site'}
+                       (language === "de" ? 'Website besuchen' : 'Visit Site')}
                     </a>
                   );
                 })}
                 
                 {/* Files */}
-                {project.files && project.files.map((file, index) => {
+                {localizedProject.files && localizedProject.files.map((file, index) => {
                   const fileName = file.split('/').pop() || `file-${index + 1}`;
                   
                   return (
@@ -372,7 +379,7 @@ export function CaseStudy({}: CaseStudyProps) {
                       className="bg-black text-white border-2 border-black px-6 py-3 font-grotesk font-bold uppercase tracking-wide hover:bg-stone-dark transition-all duration-300 brutal-shadow-sm inline-flex items-center gap-2"
                     >
                       <ExternalLink className="size-4" />
-                      Download File
+                      {language === "de" ? "Datei herunterladen" : "Download File"}
                     </a>
                   );
                 })}
@@ -382,23 +389,23 @@ export function CaseStudy({}: CaseStudyProps) {
         )}
 
         {/* Video Section */}
-        {project.video && (
+        {localizedProject.video && (
           <section>
             <div className="bg-white border-2 border-black p-8 brutal-shadow-lg mb-8">
               <h2 className="font-grotesk font-bold text-black mb-6">
-                VIDEO
+                {language === "de" ? "VIDEO" : "VIDEO"}
               </h2>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-stone rotate-1 brutal-shadow-lg" />
               <div className="relative overflow-hidden border-2 border-black">
                 <video
-                  src={project.video}
+                  src={localizedProject.video}
                   controls
                   className="w-full h-auto"
                   style={{ maxHeight: '80vh' }}
                 >
-                  Your browser does not support the video tag.
+                  {language === "de" ? "Dein Browser unterstützt das Video-Tag nicht." : "Your browser does not support the video tag."}
                 </video>
               </div>
             </div>
@@ -412,14 +419,14 @@ export function CaseStudy({}: CaseStudyProps) {
           {/* Back to Work */}
           <div className="bg-white border-2 border-black p-6 brutal-shadow">
             <h3 className="font-grotesk font-bold text-black mb-4">
-              VIEW ALL WORK
+              {language === "de" ? "ALLE ARBEITEN ANSEHEN" : "VIEW ALL WORK"}
             </h3>
             <Button
               onClick={() => navigate('/')}
               className="bg-yellow text-black border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark transition-all duration-300 brutal-shadow-sm"
             >
               <ExternalLink className="mr-2 size-4" />
-              All Projects
+              {language === "de" ? "Alle Projekte" : "All Projects"}
             </Button>
           </div>
 
@@ -428,7 +435,7 @@ export function CaseStudy({}: CaseStudyProps) {
             {prevProject && (
               <div className="bg-black text-white p-4 brutal-shadow">
                 <span className="font-inter text-xs uppercase tracking-wider text-stone mb-2 block">
-                  Previous
+                  {language === "de" ? "Vorheriges" : "Previous"}
                 </span>
                 <Button
                   variant="ghost"
@@ -446,7 +453,7 @@ export function CaseStudy({}: CaseStudyProps) {
             {nextProject && (
               <div className="bg-black text-white p-4 brutal-shadow">
                 <span className="font-inter text-xs uppercase tracking-wider text-stone mb-2 block">
-                  Next
+                  {language === "de" ? "Nächstes" : "Next"}
                 </span>
                 <Button
                   variant="ghost"

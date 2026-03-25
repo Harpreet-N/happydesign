@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import happyImage from "@/assets/img/happy.jpg";
 import { useScrollAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
+import { useLanguage } from "../context/LanguageContext";
 
 export function ParallaxHero() {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { language } = useLanguage();
 
   // Animation hooks
   //const nameAnimation = useScrollAnimation({ delay: 300, duration: 1000 });
@@ -131,10 +133,12 @@ export function ParallaxHero() {
               <div {...subtitleAnimation.animationProps}
                    className="bg-white border-2 border-black p-6 mb-8 brutal-shadow max-w-lg hover-lift">
                 <h2 className="font-grotesk font-bold text-black text-xl leading-tight mb-2">
-                  UX/UI & BRAND DESIGNER
+                  {language === "de" ? "UX/UI- UND BRAND-DESIGNER" : "UX/UI & BRAND DESIGNER"}
                 </h2>
                 <p className="font-inter text-base text-stone-dark leading-relaxed">
-                  I merge design, technology, and culture. As a graphic designer and developer, I’m here to bring your ideas to life.
+                  {language === "de"
+                    ? "Ich verbinde Design, Technologie und Kultur. Als Grafikdesigner und Entwickler helfe ich dabei, Ideen zum Leben zu bringen."
+                    : "I merge design, technology, and culture. As a graphic designer and developer, I’m here to bring your ideas to life."}
                 </p>
               </div>
 
@@ -148,7 +152,7 @@ export function ParallaxHero() {
                     }}
                     className="bg-black text-white px-8 py-4 border-2 border-black font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black brutal-shadow-sm group hover-brutal transition-all duration-300"
                 >
-                  Let's Work Together
+                  {language === "de" ? "Lass uns zusammenarbeiten" : "Let's Work Together"}
                   <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
                   →
                 </span>

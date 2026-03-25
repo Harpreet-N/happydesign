@@ -82,6 +82,7 @@ import flaschenPassport from '@/assets/project/flaschenpiraten/passport.png';
 import flaschenOld1 from '@/assets/project/flaschenpiraten/old_1.jpg';
 import flaschenOld2 from '@/assets/project/flaschenpiraten/old_2.png';
 import flaschenVideo from '@/assets/project/flaschenpiraten/flaschen-piraten.mp4';
+import { germanProjectTranslations } from './projectTranslations';
 
 export interface Project {
   id: string;
@@ -103,6 +104,22 @@ export interface Project {
   links?: string[];
   files?: string[];
   video?: string;
+}
+
+export function localizeProject(project: Project, language: "de" | "en"): Project {
+  if (language !== "de") {
+    return project;
+  }
+
+  const germanCopy = germanProjectTranslations[project.slug];
+  if (!germanCopy) {
+    return project;
+  }
+
+  return {
+    ...project,
+    ...germanCopy,
+  };
 }
 
 

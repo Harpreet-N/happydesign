@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { projects } from "../data/projects";
+import { localizeProject, projects } from "../data/projects";
 import { useScrollAnimation, useStaggeredAnimation, useParallaxScroll } from "./hooks/useScrollAnimation";
 import {ImageWithFallback} from "./figma/ImageWithFallback.tsx";
+import { useLanguage } from "../context/LanguageContext";
 
 interface BentoGridProps {
   onProjectClick: (slug: string) => void;
@@ -10,9 +11,12 @@ interface BentoGridProps {
 export function BentoGrid({ onProjectClick }: BentoGridProps) {
   const [scrollY, setScrollY] = useState(0);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const { language } = useLanguage();
 
   // Show only first 5 projects initially, or all if toggled
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, 5);
+  const displayedProjects = (showAllProjects ? projects : projects.slice(0, 5)).map((project) =>
+    localizeProject(project, language)
+  );
 
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
@@ -116,27 +120,28 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
         <div {...headerAnimation.animationProps} className="mb-16">
           <div className="inline-block bg-black text-white px-6 py-2 mb-6 brutal-shadow-sm hover-brutal">
             <p className="font-inter text-sm uppercase tracking-wider">
-              Selected Work
+              {language === "de" ? "Ausgewählte Arbeiten" : "Selected Work"}
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
               <h2 className="font-grotesk font-black text-black mb-6">
-                Projects & Case Studies
+                {language === "de" ? "Projekte & Case Studies" : "Projects & Case Studies"}
               </h2>
 
               <div className="bg-white border-2 border-black p-4 brutal-shadow hover-lift">
                 <p className="font-inter text-stone-dark">
-                  A collection of design projects
-                  spanning UX/UI, branding, rebranding.
+                  {language === "de"
+                    ? "Eine Sammlung von Designprojekten aus UX/UI, Branding und Rebranding."
+                    : "A collection of design projects spanning UX/UI, branding, rebranding."}
                 </p>
               </div>
             </div>
 
             <div className="text-right">
               <div className="text-stone text-6xl font-grotesk font-black opacity-20 select-none hover-rotate transition-transform duration-1000">
-                WORK
+                {language === "de" ? "ARBEITEN" : "WORK"}
               </div>
             </div>
           </div>
@@ -227,7 +232,9 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
               onClick={() => setShowAllProjects(!showAllProjects)}
               className="bg-white border-2 border-black px-8 py-4 font-grotesk font-bold uppercase tracking-wide hover:bg-yellow hover:text-black hover-brutal transition-all duration-300 brutal-shadow-sm"
             >
-              {showAllProjects ? "Hide Projects" : "Show All Projects"}
+              {showAllProjects
+                ? (language === "de" ? "Projekte ausblenden" : "Hide Projects")
+                : (language === "de" ? "Alle Projekte anzeigen" : "Show All Projects")}
             </button>
           </div>
         )}
@@ -236,7 +243,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
         <div {...ctaAnimation.animationProps} className="mt-20 text-center">
           <div className="bg-black text-white p-8 brutal-shadow-lg inline-block hover-lift">
             <h3 className="font-grotesk font-bold text-white text-2xl mb-4">
-              INTERESTED IN WORKING TOGETHER?
+              {language === "de" ? "INTERESSE AN EINER ZUSAMMENARBEIT?" : "INTERESTED IN WORKING TOGETHER?"}
             </h3>
             <button
               onClick={() => {
@@ -249,7 +256,7 @@ export function BentoGrid({ onProjectClick }: BentoGridProps) {
               }}
               className="bg-yellow text-black px-8 py-4 border-2 border-yellow font-grotesk font-bold uppercase tracking-wide hover:bg-yellow-dark hover-brutal transition-all duration-300"
             >
-              Start a Project
+              {language === "de" ? "Projekt starten" : "Start a Project"}
             </button>
           </div>
         </div>

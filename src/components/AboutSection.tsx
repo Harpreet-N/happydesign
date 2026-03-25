@@ -11,10 +11,12 @@ import htmlIcon from "@/assets/svg/html.svg";
 import cssIcon from "@/assets/svg/css.svg";
 import tsIcon from "@/assets/svg/typescript.svg";
 import happy2Image from "@/assets/img/happy2.jpeg";
+import { useLanguage } from "../context/LanguageContext";
 
 
 export function AboutSection() {
   const [scrollY, setScrollY] = useState(0);
+  const { language } = useLanguage();
 
   // Animation hooks
   const headerAnimation = useScrollAnimation({ delay: 200, duration: 800 });
@@ -85,14 +87,14 @@ export function AboutSection() {
   ];
 
   const skills = [
-    "User Experience Design",
-    "Interface Design",
-    "Design Systems",
-    "Brand Identity",
-    "Prototyping",
-    "User Research Methods",
-    "Design Thinking and User Journey",
-    "Visual Design",
+    language === "de" ? "User Experience Design" : "User Experience Design",
+    language === "de" ? "Interface Design" : "Interface Design",
+    language === "de" ? "Design Systeme" : "Design Systems",
+    language === "de" ? "Markenidentität" : "Brand Identity",
+    language === "de" ? "Prototyping" : "Prototyping",
+    language === "de" ? "User-Research Methoden" : "User Research Methods",
+    language === "de" ? "Design Thinking & User Journey" : "Design Thinking and User Journey",
+    language === "de" ? "Visuelles Design" : "Visual Design",
   ];
 
   const skillsIcon = [
@@ -175,12 +177,12 @@ export function AboutSection() {
         <div {...headerAnimation.animationProps} className="mb-16">
           <div className="inline-block bg-black text-white px-6 py-2 mb-6 brutal-shadow-sm hover-brutal">
             <p className="font-inter text-sm uppercase tracking-wider">
-              About Designer
+              {language === "de" ? "Über den Designer" : "About Designer"}
             </p>
           </div>
 
           <h2 className="font-grotesk font-black text-black mb-8">
-            Creating Digital Experiences
+            {language === "de" ? "Digitale Erlebnisse gestalten" : "Creating Digital Experiences"}
           </h2>
         </div>
 
@@ -189,18 +191,24 @@ export function AboutSection() {
           <div className="lg:col-span-2">
             <div {...storyAnimation.animationProps} className="bg-yellow border-2 border-black p-8 brutal-shadow-lg mb-8 marble-texture hover-lift">
               <h3 className="font-grotesk font-bold text-black text-2xl mb-6">
-                FROM VIENNA
+                {language === "de" ? "AUS WIEN" : "FROM VIENNA"}
               </h3>
 
               <div className="space-y-4 font-inter text-base leading-relaxed">
                 <p>
-                  I began my career as a developer, working for several years in a regulatory firm before moving to Raiffeisen Software, where I took on the role of UX/UI developer. During this time, I also completed my bachelor’s degree in Computer Science.
+                  {language === "de"
+                    ? "Ich habe meine Laufbahn als Entwickler begonnen und mehrere Jahre in einem regulatorischen Unternehmen gearbeitet, bevor ich zu Raiffeisen Software wechselte. Dort war ich als UX/UI-Entwickler tätig und absolvierte parallel meinen Bachelor in Informatik."
+                    : "I began my career as a developer, working for several years in a regulatory firm before moving to Raiffeisen Software, where I took on the role of UX/UI developer. During this time, I also completed my bachelor’s degree in Computer Science."}
                 </p>
                 <p>
-                  Soon I realized that something was missing I wanted to dive deeper into creativity and design. This led me to pursue a master’s degree in Graphic Design at FH St. Pölten. That step planted the seeds for my passion: understanding people and customers, and designing solutions that truly fit their needs.
+                  {language === "de"
+                    ? "Bald merkte ich, dass mir etwas fehlte: Ich wollte tiefer in Kreativität und Design eintauchen. Deshalb absolvierte ich meinen Master in Grafikdesign an der FH St. Pölten. Dort entstand meine Leidenschaft, Menschen und Kundenbedürfnisse wirklich zu verstehen und passende Lösungen zu gestalten."
+                    : "Soon I realized that something was missing I wanted to dive deeper into creativity and design. This led me to pursue a master’s degree in Graphic Design at FH St. Pölten. That step planted the seeds for my passion: understanding people and customers, and designing solutions that truly fit their needs."}
                 </p>
                 <p>
-                  Today, I continue to work at Raiffeisen Software, now as a designer, combining my technical foundation with a love for design and user experience.
+                  {language === "de"
+                    ? "Heute arbeite ich weiterhin bei Raiffeisen Software, inzwischen als Designer, und verbinde meine technische Basis mit meiner Leidenschaft für Design und User Experience."
+                    : "Today, I continue to work at Raiffeisen Software, now as a designer, combining my technical foundation with a love for design and user experience."}
                 </p>
               </div>
             </div>
@@ -208,7 +216,7 @@ export function AboutSection() {
             {/* Experience Timeline */}
             <div {...experienceAnimation.animationProps} className="bg-stone-light border-2 border-black p-6 brutal-shadow hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
-                EDUCATION JOURNEY
+                {language === "de" ? "AUSBILDUNGSWEG" : "EDUCATION JOURNEY"}
               </h4>
 
               <div className="space-y-4">
@@ -237,7 +245,7 @@ export function AboutSection() {
             {/* CAREER Timeline */}
             <div {...experienceAnimation.animationProps} className="bg-yellow border-2 border-black p-6 brutal-shadow hover-lift mt-6">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
-                CAREER JOURNEY
+                {language === "de" ? "BERUFLICHER WEG" : "CAREER JOURNEY"}
               </h4>
 
               <div className="space-y-4">
@@ -282,7 +290,7 @@ export function AboutSection() {
               {/* Abstract text overlay */}
               <div className="absolute -bottom-4 -left-4 bg-black text-white p-2 -rotate-6 hover-brutal transition-all duration-300">
                 <span className="font-grotesk font-bold text-xs">
-                  CREATIVE
+                  {language === "de" ? "KREATIV" : "CREATIVE"}
                 </span>
               </div>
             </div>
@@ -290,7 +298,7 @@ export function AboutSection() {
             {/* Skills Grid */}
             <div {...skillsAnimation.animationProps} className="bg-white border-2 border-black p-6 brutal-shadow hover-lift">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
-                EXPERTISE
+                {language === "de" ? "KOMPETENZEN" : "EXPERTISE"}
               </h4>
 
               <div ref={skillsContainerRef} className="grid grid-cols-1 gap-3">
@@ -312,7 +320,7 @@ export function AboutSection() {
             <div {...skillsAnimation.animationProps}
                  className="bg-white border-2 border-black p-6 brutal-shadow hover-lift mt-3">
               <h4 className="font-grotesk font-bold text-black text-xl mb-6">
-                Skills
+                {language === "de" ? "Tools" : "Skills"}
               </h4>
 
               <div
@@ -341,7 +349,7 @@ export function AboutSection() {
         {/* Abstract Typography Element */}
         <div
             className="absolute bottom-10 left-10 text-stone text-8xl font-grotesk font-black opacity-15 select-none hover-rotate transition-transform duration-1000">
-          ABOUT
+          {language === "de" ? "ÜBER MICH" : "ABOUT"}
         </div>
       </div>
 
