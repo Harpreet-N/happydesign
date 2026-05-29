@@ -1,0 +1,140 @@
+# Harpreet Portfolio — extended context for LLMs
+
+> Full machine-readable overview. Short index: https://harpreet-n.github.io/happydesign/llms.txt
+
+## Person
+
+- Name: Harpreet (Harpreet Singh Nehar)
+- Role: UX/UI & Brand Designer
+- Location: Vienna, Austria
+- Email: harpreetneharyt@gmail.com
+- WhatsApp: https://wa.me/4369918211764
+- LinkedIn: https://www.linkedin.com/in/harpreet-nehar-05575118a/
+- Instagram: https://www.instagram.com/happysspace/
+- Site: https://harpreet-n.github.io/happydesign/
+- Languages on site: German (default), English
+
+## Professional summary
+
+Harpreet is a UX/UI and brand designer with a software engineering background. He designs digital products, brand identities, design systems, and conversion-focused experiences. Work spans mobile apps, healthcare, industrial tech, food branding, and conceptual brand systems. Based in Vienna; experience includes Raiffeisen Software and prior development work.
+
+Skills: User Experience Design, Interface Design, Design Systems, Brand Identity, Prototyping, User Research, Visual Design, Conversion UX.
+
+---
+
+## Case study: Bottle Pirates
+
+- URL: https://harpreet-n.github.io/happydesign/project/bottle-pirates
+- Year: 2025
+- Tags: Mobile App, UX/UI Design, Marketplace, Community, Social Commerce
+
+Bottle Pirates (Flaschenpiraten) is a social community marketplace for wine—built for collectors, enthusiasts, and sellers to discover bottles, connect with other members, and trade, buy, or sell wines in a playful treasure-hunt experience. The product blends marketplace mechanics with community interaction.
+
+Problem: Wine trading is high-trust and detail-heavy; listings need clear provenance-style info; experiences can become cluttered.
+
+Solution: Community-first marketplace flow with quick listing creation, browse/filter, discovery-to-conversation with minimal friction, auction mechanics, community profiles, and mobile-first search.
+
+---
+
+## Case study: Weight Loss Program for Online Fitness Coaches
+
+- URL: https://harpreet-n.github.io/happydesign/project/weight-loss-conversion
+- Year: 2025
+- Tags: UX/UI, Conversion Optimization, Landing Page, UX Research
+
+Conceptual UX case study on reducing drop-off between social media engagement and paid program enrollment for online fitness coaches. Focus: trust, clarity, and decision support for high-commitment 12-week transformations.
+
+Solution highlights: commitment framing, outcome-oriented CTAs, fear-reduction microcopy, concrete social proof, FAQ addressing motivation and past failure.
+
+---
+
+## Case study: Gassner Mobile App Redesign
+
+- URL: https://harpreet-n.github.io/happydesign/project/focasma
+- Year: 2025
+- Tags: Mobile Redesign, Data Visualization, Industrial Tech
+
+Redesign for Gassner Wägen mobile app (precision weighing / industrial measurement). Improved usability, visual hierarchy, analytics, measurement history, device management, and dashboards for technicians and operators.
+
+---
+
+## Case study: MyDiabetes Website Redesign
+
+- URL: https://harpreet-n.github.io/happydesign/project/mydiabetes
+- Year: 2023
+- Tags: Web Redesign, Healthcare
+
+Redesign of the Diabär association website for children and families affected by diabetes. Goals: accessibility, structure, emotional connection, responsive layout, modular design system, simplified navigation, events, children’s section, educational resources.
+
+Live site reference in case study: https://diabetesvernetzt.at/
+
+---
+
+## Case study: Caffé Stella Polare
+
+- URL: https://harpreet-n.github.io/happydesign/project/caffe-stella-polare
+- Year: 2024
+- Tags: Web Design, Branding, Responsive, Menu Design
+
+Website concept for a historic Trieste coffeehouse (Viennese café tradition). Multilingual-ready (DE/EN/IT), mobile-first menu, heritage-focused branding, cultural programming, clear location/wayfinding.
+
+---
+
+## Case study: MyDiabetes Mobile Game Redesign
+
+- URL: https://harpreet-n.github.io/happydesign/project/mydiabetes-game
+- Year: 2023
+- Tags: Mobile App, Gamification, Healthcare
+
+Educational game redesign helping children learn diabetes management through avatar care (feeding, insulin, routines). Child-friendly visual language and playful UX.
+
+---
+
+## Case study: Xocoatl Branding
+
+- URL: https://harpreet-n.github.io/happydesign/project/xocoatl-branding
+- Year: 2024
+- Tags: Branding, Packaging, Identity
+
+Brand identity for a traditional Aztec cocoa drink concept—logo, packaging, web/landing, merchandise, brand guide. Emphasis on authenticity, quality, sustainability, and retail standout.
+
+---
+
+## Case study: Agility Plus
+
+- URL: https://harpreet-n.github.io/happydesign/project/agility-plus
+- Year: 2025
+- Tags: Product Design, Sports Tech, Rehabilitation
+
+Modular LED-grid training system combining physical agility with cognitive challenges; app-controlled programs for athletes, coaches, and rehab. Tested with clubs, physiotherapists, and sports scientists.
+
+---
+
+## Case study: Burrito Casa
+
+- URL: https://harpreet-n.github.io/happydesign/project/burrito-casa
+- Year: 2023
+- Tags: Concept, Branding, Food Service
+
+Self-initiated concept: modern burrito/taco brand across digital and physical touchpoints—bold identity, menus, packaging, social, mobile ordering mockups.
+
+---
+
+## Case study: TailMate
+
+- URL: https://harpreet-n.github.io/happydesign/project/tailmate
+- Year: 2024
+- Tags: Concept, Branding, UI/UX
+
+Concept redesign for a dog adoption platform—warm brand, illustrations, improved adoption flow and emotional storytelling.
+
+---
+
+## Legal pages
+
+- Impressum: https://harpreet-n.github.io/happydesign/impressum
+- Datenschutz: https://harpreet-n.github.io/happydesign/datenschutz
+
+## Citation
+
+Harpreet — UX/UI & Brand Designer Portfolio (Happydesign), https://harpreet-n.github.io/happydesign/
