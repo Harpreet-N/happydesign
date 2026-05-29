@@ -1,4 +1,4 @@
-# https://harpreet-n.github.io/happydesign/
+# https://harpreet-n.github.io/
 User-agent: *
 Allow: /
 
@@ -27,4 +27,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://harpreet-n.github.io/happydesign/sitemap.xml
+Sitemap: https://harpreet-n.github.io/sitemap.xml
