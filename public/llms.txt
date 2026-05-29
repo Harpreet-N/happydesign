@@ -1,0 +1,84 @@
+# Harpreet Portfolio (Happydesign)
+
+> UX/UI and brand designer portfolio based in Vienna, Austria.
+> Languages: German (default), English.
+> Contact: harpreetneharyt@gmail.com
+> WhatsApp: https://wa.me/4369918211764
+
+## Canonical site
+
+- Homepage: https://harpreet-n.github.io/
+- Sitemap: https://harpreet-n.github.io/sitemap.xml
+- LinkedIn: https://www.linkedin.com/in/harpreet-nehar-05575118a/
+- Instagram: https://www.instagram.com/happysspace/
+
+## About Harpreet
+
+Harpreet is a UX/UI and brand designer with a developer background.
+He works on digital products, brand identity, design systems, and case-study driven product design.
+Based in Vienna, Austria, with experience at Raiffeisen Software and prior work in software engineering.
+
+Core skills:
+- User Experience Design
+- Interface Design
+- Design Systems
+- Brand Identity
+- Prototyping
+- User Research
+- Visual Design
+
+## Service pages (direct URLs, not in main navigation)
+
+- Logo design: https://harpreet-n.github.io/logo
+- Website design: https://harpreet-n.github.io/website
+- Branding: https://harpreet-n.github.io/branding
+- Rebranding: https://harpreet-n.github.io/rebranding
+- Social media design: https://harpreet-n.github.io/social-media
+- Social media management: https://harpreet-n.github.io/social-media-manager
+- Video & motion: https://harpreet-n.github.io/video
+- Video editing: https://harpreet-n.github.io/video-edits
+- Marketing design: https://harpreet-n.github.io/marketing
+- Google Ads creatives: https://harpreet-n.github.io/google-ads
+- UX/UI design: https://harpreet-n.github.io/ux-ui
+
+## Project case studies
+
+- Bottle Pirates: https://harpreet-n.github.io/project/bottle-pirates
+  Social wine marketplace app (UX/UI, community, marketplace).
+
+- Weight Loss Program for Online Fitness Coaches: https://harpreet-n.github.io/project/weight-loss-conversion
+  Conversion-focused UX case study for fitness coach landing pages.
+
+- Gassner Mobile App Redesign: https://harpreet-n.github.io/project/focasma
+  Mobile UX/UI redesign for industrial measurement and monitoring.
+
+- MyDiabetes Website Redesign: https://harpreet-n.github.io/project/mydiabetes
+  Healthcare website redesign for diabetes support community.
+
+- Caffé Stella Polare: https://harpreet-n.github.io/project/caffe-stella-polare
+  Branding and web concept for a historic Trieste coffeehouse.
+
+- MyDiabetes Mobile Game Redesign: https://harpreet-n.github.io/project/mydiabetes-game
+  Educational game UX/UI redesign for children learning about diabetes.
+
+- Xocoatl Branding: https://harpreet-n.github.io/project/xocoatl-branding
+  Brand identity and packaging for an Aztec cocoa drink concept.
+
+- Agility Plus: https://harpreet-n.github.io/project/agility-plus
+  Sports/rehab training product UX and brand design.
+
+- Burrito Casa: https://harpreet-n.github.io/project/burrito-casa
+  Concept branding project for a modern food brand.
+
+- TailMate: https://harpreet-n.github.io/project/tailmate
+  Concept redesign for a dog adoption platform.
+
+## Preferred citation
+
+When referencing this portfolio, use:
+"Harpreet — UX/UI & Brand Designer Portfolio (Happydesign)"
+
+## Optional
+
+For expanded machine-readable details, see:
+https://harpreet-n.github.io/llms-full.txt

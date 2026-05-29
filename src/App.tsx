@@ -5,9 +5,14 @@ import { Home } from './components/Home';
 import { CaseStudy } from './components/CaseStudy';
 import { ImpressumPage } from './components/ImpressumPage';
 import { DatenschutzPage } from './components/DatenschutzPage';
+import { ServicePage } from './components/ServicePage';
+import { ServiceRedirect } from './components/ServiceRedirect';
+import { LegacyHappydesignRedirect } from './components/LegacyHappydesignRedirect';
+import { getServiceSlugFromPath } from './data/services';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { SeoManager } from './components/SeoManager';
 
-type Page = 'home' | 'about' | 'contact' | 'case-study' | 'impressum' | 'datenschutz';
+type Page = 'home' | 'about' | 'contact' | 'case-study' | 'impressum' | 'datenschutz' | 'service';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -18,7 +23,7 @@ function AppContent() {
   // Update currentPage based on current route
   useEffect(() => {
     const path = location.pathname;
-    if (path === '/' || path === '/happydesign/') {
+    if (path === '/') {
       setCurrentPage('home');
     } else if (path.startsWith('/project/')) {
       setCurrentPage('case-study');
@@ -26,13 +31,15 @@ function AppContent() {
       setCurrentPage('impressum');
     } else if (path === '/datenschutz') {
       setCurrentPage('datenschutz');
+    } else if (getServiceSlugFromPath(path)) {
+      setCurrentPage('service');
     }
   }, [location.pathname]);
 
   // While on the home route, update currentPage based on the section in view
   useEffect(() => {
     const path = location.pathname;
-    if (!(path === '/' || path === '/happydesign/')) return;
+    if (path !== '/') return;
 
     const observer = new IntersectionObserver(
       () => {
@@ -117,6 +124,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoManager />
       <div className="fixed top-6 right-6 z-[60]">
         <div className="flex items-center bg-black border-2 border-black brutal-shadow-sm">
           <button
@@ -139,7 +147,6 @@ function AppContent() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/happydesign/" element={<Home />} />
         <Route 
           path="/project/:slug" 
           element={<CaseStudy />} 
@@ -152,14 +159,22 @@ function AppContent() {
           path="/datenschutz" 
           element={<DatenschutzPage onBack={handleBackToHome} />} 
         />
-        {/* Catch-all route for any other paths */}
+        <Route path="/services/:slug" element={<ServiceRedirect />} />
+        <Route path="/happydesign" element={<Navigate to="/" replace />} />
+        <Route path="/happydesign/*" element={<LegacyHappydesignRedirect />} />
+        <Route
+          path="/:slug"
+          element={<ServicePage onBack={handleBackToHome} />}
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
-      <BottomNavigation 
-        currentPage={currentPage} 
-        onNavigate={handleNavigate} 
-      />
+      {currentPage !== 'service' && (
+        <BottomNavigation
+          currentPage={currentPage}
+          onNavigate={handleNavigate}
+        />
+      )}
     </div>
   );
 }

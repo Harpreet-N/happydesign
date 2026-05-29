@@ -98,11 +98,11 @@ export function Home() {
   };
 
   return (
-    <>
+    <main id="main-content">
       <ParallaxHero />
       <BentoGrid onProjectClick={handleProjectClick} />
       <AboutSection />
       <ContactSection />
-    </>
+    </main>
   );
 }

@@ -123,18 +123,19 @@ export function ParallaxHero() {
             >
               {/* Tag */}
               <div className="inline-block bg-black text-white px-6 py-2 mb-8 brutal-shadow-sm hover-brutal">
-                <p className="font-inter text-sm uppercase tracking-wider">
-                  HARPREET NEHAR Portfolio
-                </p>
+                <h1 className="font-inter text-sm uppercase tracking-wider">
+                  {language === "de"
+                    ? "Harpreet — UX/UI- & Brand-Designer Portfolio"
+                    : "Harpreet — UX/UI & Brand Designer Portfolio"}
+                </h1>
               </div>
-
 
               {/* Subtitle */}
               <div {...subtitleAnimation.animationProps}
                    className="bg-white border-2 border-black p-6 mb-8 brutal-shadow max-w-lg hover-lift">
-                <h2 className="font-grotesk font-bold text-black text-xl leading-tight mb-2">
+                <p className="font-grotesk font-bold text-black text-xl leading-tight mb-2">
                   {language === "de" ? "UX/UI- UND BRAND-DESIGNER" : "UX/UI & BRAND DESIGNER"}
-                </h2>
+                </p>
                 <p className="font-inter text-base text-stone-dark leading-relaxed">
                   {language === "de"
                     ? "Ich verbinde Design, Technologie und Kultur. Als Grafikdesigner und Entwickler helfe ich dabei, Ideen zum Leben zu bringen."
@@ -169,7 +170,7 @@ export function ParallaxHero() {
                 <div className="relative w-80 h-96 border-2 border-black overflow-hidden bg-marble marble-texture">
                   <ImageWithFallback
                       src={happyImage}
-                      alt="Greek marble bust"
+                      alt={language === "de" ? "Harpreet — Porträt" : "Harpreet — portrait"}
                       className="w-full h-full object-cover object-center scale-110 opacity-90 transition-transform duration-500 hover:scale-115"
                   />
                   <div
